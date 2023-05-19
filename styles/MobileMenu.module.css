@@ -1,0 +1,41 @@
+.mobileMenuItem {
+    opacity: 1;
+    font-size: var(--font-medium);
+    font-weight: 500;
+    line-height: 1.875em;
+    padding: 0.688em 1.5em;
+    transition: all 200ms ease-in-out;
+    width: 100%;
+  }
+  .mobileMenuItem:hover {
+    background: #850101;
+  }
+  
+  .flagItem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    column-gap: 0.5em;
+    font-size: var(--font-medium);
+    transition: all 200ms ease-in-out;
+    font-weight: 500;
+    line-height: 1.875em;
+    width: 100%;
+    padding: 0.688em 1.5em;
+  }
+  
+  .flagItem:hover{
+    background: #850101;
+  }
+
+  .button {
+    background-color: #850101;
+    color: var(--nav-font);
+    border: 0.063em solid var(--nav-font);
+    border-radius: 3.125em;
+    padding: 0.45em 1.25em;
+    font-size: var(--font-medium);
+    cursor: pointer;
+    width: 100%;
+    margin: 0.6em 0 2.6em 0;
+  }

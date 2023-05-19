@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 500;
+  line-height: 2.0625em;
+  margin: 1.375em 0;
+  color: #000000;
+}
+.inputCont {
+  width: 100%;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+}
+
+.changeText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 500;
+  line-height: 1.6875em;
+  margin-right: 1.0625em;
+  color: var(--primary);
+  padding-bottom: 1.25em;
+}
+.marginRight {
+  margin-right: 0;
+}
+.changeText:hover {
+  cursor: pointer;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.row2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: var(--font-ml);
+  }
+  .inputCont {
+    width: 29em !important;
+  }
+  .row1 {
+    flex-direction: row;
+    align-items: center;
+  }
+}

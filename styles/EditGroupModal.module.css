@@ -1,0 +1,226 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-top: none;
+  border-radius: 0.9375em;
+  width: 90%;
+  height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0 1em;
+}
+.modalContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.modalContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.closeDeleteModalImage {
+  position: absolute;
+  right: 0.625em;
+  top: 0.25em;
+  margin-top: 0.5em;
+  padding-right: 1.5625em;
+  margin-bottom: 2.1875em;
+}
+.closeDeleteModalImage:hover {
+  cursor: pointer;
+}
+
+.headerText {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  flex-grow: 1;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  line-height: 1em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.formContainer {
+  width: 100%;
+}
+
+.modalText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  color: #000000;
+}
+
+.contactOptionContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 0.875em;
+  margin-bottom: 1.875em;
+}
+.outerCircle {
+  height: 1.25em;
+  width: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  margin-right: 1.25em;
+}
+.outerCircleSelected {
+  background-color: #000000;
+}
+.innerCircle {
+  height: 0.625em;
+  width: 0.625em;
+  background-color: #eeeeee;
+  border-radius: 50%;
+}
+.marginRight {
+  margin-right: 1em;
+}
+
+.inputCont {
+  width: 100%;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hide {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.changeText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.6875em;
+  margin-right: 1.0625em;
+  color: var(--primary);
+  padding-bottom: 1.25em;
+}
+.changeText:hover {
+  cursor: pointer;
+}
+
+.addButton {
+  width: 100%;
+  background-color: var(--primary);
+  text-align: center;
+  color: #ffffff;
+  padding: 0.5em 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 1em;
+  border-radius: 3.125em;
+  margin-bottom: 4.375em;
+  border: none;
+}
+.addButton:hover {
+  cursor: pointer;
+}
+.margin {
+  margin-left: 5.625em;
+  margin-bottom: 1.125em;
+}
+.divider {
+  width: 38.4375em;
+  border-bottom: 0.125em solid #000000;
+}
+.marginLeft {
+  margin-left: 0;
+}
+.marginLeftLarge {
+  margin-left: 0;
+}
+.alignCenter {
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .modalContainer {
+    padding: 0;
+  }
+  .inputCont {
+    width: 29em !important;
+  }
+
+  .headerText {
+    font-size: var(--font-26);
+    line-height: 1.9375em;
+    margin-top: 2.625em;
+    margin-bottom: 1.6875em;
+  }
+
+  .changeText,
+  .modalText {
+    font-size: var(--font-normal);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .modalContainer {
+    max-width: 49em;
+    max-height: 40.1875em;
+    padding-left: 3.125em !important;
+  }
+  .formContainer {
+    width: 29em;
+  }
+  .marginLeft {
+    margin-left: 1.5625em;
+  }
+  .marginLeftLarge {
+    margin-left: 7.8125em;
+  }
+  .marginRight {
+    margin-right: 6.6875em;
+  }
+  .hide {
+    opacity: 0;
+    font-size: var(--font-normal);
+    font-weight: 500;
+    line-height: 1.6875em;
+    color: var(--primary);
+    padding-bottom: 1.25em;
+    height: max-content;
+    width: max-content;
+  }
+  .addButton {
+    width: 20em !important;
+    font-size: var(--font-lg);
+    line-height: 1.8125em;
+  }
+}

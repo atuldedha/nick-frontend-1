@@ -1,0 +1,272 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-radius: 1.25em;
+  border-top: none;
+  width: 90%;
+  max-width: 35em;
+  height: 85%;
+  overflow: scroll;
+  padding: 2.1875em 1em;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4375em;
+}
+.paddingLeft {
+  padding-left: 7.9375em;
+}
+
+.downloadImage,
+.closeDeleteModalImage {
+  height: 1.25em;
+  width: 1.25em;
+  object-fit: contain;
+}
+.downloadImage:hover,
+.closeDeleteModalImage:hover {
+  cursor: pointer;
+}
+
+.modalHeaderText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 2.4375em;
+  color: #000000;
+}
+
+.modalFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.applicationForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 37.5em;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.formText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  color: #000000;
+  margin-bottom: 0.45em;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.875em;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.6875em;
+  color: #464646;
+  background: #ffffff;
+  box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  border-radius: 0.625em;
+  border: none;
+  margin-bottom: 0.625em;
+  outline: none;
+}
+
+.gridCol2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1.375em;
+  width: 100%;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+.equalWidth {
+  width: 50%;
+}
+.smallCheck {
+  height: 1.375em;
+  width: 1.375em;
+  border: 0.0625em solid black;
+  border-radius: 0.1875em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.margin {
+  margin-left: 2.5em;
+}
+
+.question {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.6875em;
+  color: #000000;
+}
+
+.bottomBorder {
+  padding: 0 0.75em;
+  border-bottom: 0.0625em solid #000000;
+}
+
+.marginBottom {
+  margin-bottom: 0.75em;
+}
+.marginB0 {
+  margin-bottom: 0;
+}
+
+.modalButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 3.125em;
+  margin-top: 0.75em;
+  padding: 0.325em 1.75em;
+  margin-right: 0.9375em;
+  margin-left: 0.75em;
+}
+
+.rejectButton {
+  background-color: #464646 !important;
+  width: 100%;
+}
+.editButton {
+  width: 100%;
+}
+
+.modalButton:hover {
+  cursor: pointer;
+}
+
+.formInput2 {
+  width: max-content;
+  padding: 0.5em;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.375em;
+  color: #464646;
+  background: #ffffff;
+  box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  border-radius: 0.625em;
+  border: none;
+  margin-bottom: 1.375em;
+  outline: none;
+  margin-left: 0.625em;
+}
+.transformGrid {
+  grid-template-columns: auto;
+}
+.applicationButtonsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.editButtonWrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+@media screen and (min-width: 560px) {
+  .transformGrid {
+    grid-template-columns: auto auto;
+  }
+  .applicationButtonsWrapper {
+    flex-direction: row;
+  }
+  .editButtonWrapper {
+    width: max-content !important;
+  }
+  .rejectButton {
+    width: max-content !important;
+  }
+  .editButton {
+    width: max-content !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalContainer {
+    width: 90%;
+    height: 80%;
+    padding: 2.1875em 2.4375em;
+  }
+  .downloadImage,
+  .closeDeleteModalImage {
+    height: 2.125em;
+    width: 2.125em;
+  }
+  .modalHeaderText {
+    font-size: var(--font-medium);
+  }
+  .formText {
+    font-size: var(--font-normal);
+    margin-bottom: 0.75em;
+  }
+  .formInput {
+    font-size: var(--font-sm);
+    margin-bottom: 1.375em;
+  }
+  .question {
+    font-size: var(--font-normal);
+  }
+  .marginBottom {
+    margin-bottom: 1.3125em;
+  }
+  .margin {
+    margin-left: 5.375em;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .modalHeaderText {
+    font-size: var(--font-26);
+  }
+}

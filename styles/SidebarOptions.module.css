@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  padding: 0.9375em 0.625em;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: inherit;
+  margin-bottom: 0.625em;
+}
+
+.selectedBg {
+  background-color: #fd2626;
+  border-radius: 0.925em;
+}
+
+.container:hover {
+  cursor: pointer;
+  background-color: #fd2626;
+  border-radius: 0.925em;
+}
+
+.option {
+  margin-left: 0.925em;
+  font-family: Inter;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.2em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+
+.selectedOption {
+  color: black;
+}
+
+@media screen and (min-width: 530px) {
+  .container {
+    padding: 1em 0.8em;
+  }
+  .option {
+    font-size: var(--font-lg);
+    margin-left: 1.25em;
+  }
+}

@@ -1,0 +1,256 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-top: none;
+  border-radius: 0.9375em;
+  width: 80%;
+  max-width: 52em;
+  max-height: 80%;
+  position: relative;
+  padding: 0 1em;
+}
+
+.closeDeleteModalImage {
+  position: absolute;
+  right: 0.625em;
+  top: 0.625em;
+  margin-top: 1.1875em;
+  padding-right: 1.5625em;
+  margin-bottom: 2.1875em;
+}
+.closeDeleteModalImage:hover {
+  cursor: pointer;
+}
+
+.headerText {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.9375em;
+  margin-top: 3.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.formContainer {
+  width: 100%;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.SubmitButton {
+  max-width: 20vh;
+  width: 100%;
+  background-color: var(--primary);
+  text-align: center;
+  color: #ffffff;
+  padding: 0.75 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 1.8125em;
+  border-radius: 3.125em;
+  margin-bottom: 3.9375em;
+  border: none;
+}
+.SubmitButton:hover {
+  cursor: pointer;
+}
+.CancelButton {
+  max-width: 20vh;
+  width: 100%;
+  background-color: Gray;
+  text-align: center;
+  color: #ffffff;
+  padding: 0.75 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 1.8125em;
+  border-radius: 3.125em;
+  margin-bottom: 3.9375em;
+  border: none;
+  cursor: pointer;
+}
+.CancelButton:hover {
+  cursor: pointer;
+}
+.ContactButton {
+  width: 100%;
+  background-color: var(--primary);
+  text-align: center;
+  color: #ffffff;
+  padding: 0.75 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-lg);
+  font-weight: 600;
+  line-height: 1.8125em;
+  border-radius: 3.125em;
+  margin-bottom: 3.9375em;
+  border: none;
+}
+.flexRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.625em;
+}
+.addButton:hover {
+  cursor: pointer;
+}
+
+.checkboxContainer {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.positionModalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-radius: 0.9375em;
+  width: 50em;
+  margin-left: 10vh;
+  position: relative;
+}
+
+/* CheckBox CSS  for Position Modal*/
+
+/* The container */
+.checkInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.checkInput input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* flex container */
+.dFlex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* checkbox styles */
+
+.smallCheckContainer {
+  width: 10%;
+}
+
+.smallCheck {
+  height: 1.25em;
+  width: 1.25em;
+  border: 0.0625em solid black;
+  border-radius: 0.1875em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.9375em;
+  cursor: pointer;
+}
+
+/* text */
+.positionText {
+  font-size: var(--font-lg);
+  padding-left: 35px;
+}
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border: solid 2px;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.checkInput:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.checkInput input:checked ~ .checkmark {
+  background-color: black;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.checkInput input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkInput .checkmark:after {
+  top: 5px;
+  left: 4.5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: white;
+}
+
+@media screen and (min-width: 768px) {
+  .modalContainer {
+    margin-left: 10vh;
+    padding: 0;
+  }
+  .formContainer {
+    width: 29em !important;
+  }
+  .headerText {
+    font-size: var(--font-lg);
+  }
+  .SubmitButton,
+  .CancelButton {
+    font-size: var(--font-lg);
+  }
+}

@@ -1,0 +1,232 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-radius: 0.9375em;
+  width: 22em;
+  max-height: 80%;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9375em;
+  background-color: var(--primary);
+  border-radius: 0.9375em;
+}
+
+.headerText {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 700;
+  line-height: 1.875em;
+  letter-spacing: 0em;
+  color: white;
+  text-align: left;
+}
+
+.closeImage:hover {
+  cursor: pointer;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+}
+
+.subjectText {
+  margin: 0.9375em 0 0.625em 0.9375em;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.75em;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.mailInput {
+  background-color: inherit;
+  outline: none;
+  border: none;
+  border-radius: 0.25em;
+  width: 100%;
+  padding: 0.3125em;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  margin-left: 0.625em;
+  margin-right: 0.625em;
+  margin-top: 0.5em;
+}
+
+.mailInput {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.mailInput::-webkit-scrollbar {
+  display: none;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 0.0625em solid #000000;
+}
+
+.messageContainer {
+  background: white;
+  height: 9.25em;
+  overflow-y: scroll;
+  margin: 0 0.625em 0.5em 0.625em;
+  padding: 0.875em 0.3125em 0 0.875em;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.75em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  margin-top: 1.125em;
+}
+
+.messageContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.messageContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1.25em;
+}
+
+.modalButton {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 3.125em;
+}
+
+.attachButton {
+  padding: 0.3125em 0.625em;
+}
+
+.attachImage {
+  margin-left: 0.375em;
+  margin-top: 0.5em;
+}
+
+.sendButton {
+  padding: 0.625em 1.75em;
+  margin-right: 0.9375em;
+  margin-left: 0.75em;
+}
+
+.modalButton:hover {
+  cursor: pointer;
+}
+
+.recipientsContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 0.9375em;
+  margin-top: 0.4375em;
+  overflow-x: scroll;
+}
+.recipientsContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.recipientsContainer::-webkit-scrollbar {
+  display: none;
+}
+.recipients {
+  font-family: Poppins;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .modalContainer {
+    width: 30em;
+  }
+  .sendButton {
+    padding: 0.625em 2.375em;
+    margin-right: 1.25em;
+    margin-left: 0.875em;
+  }
+  .recipientsContainer {
+    margin-left: 1.125em;
+  }
+  .recipients {
+    font-size: var(--font-normal);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modalContainer {
+    width: 37.5em;
+  }
+  .modalHeader {
+    padding: 1.875em;
+  }
+  .headerText {
+    font-size: var(--font-26);
+  }
+  .subjectText {
+    margin: 0.8em 0 0.8 em 0.9375em;
+    font-size: var(--font-lg);
+  }
+  .messageContainer {
+    font-size: var(--font-medium);
+    margin: 0 1.25em 0.5em 1.25em;
+    height: 10.875em;
+    padding: 1.375em 0.5em 0 1.375em;
+    margin-top: 1.375em;
+  }
+  .buttonContainer {
+    margin-bottom: 1.875em;
+  }
+  .sendButton {
+    padding: 0.625em 3em;
+    margin-right: 1.8125em;
+    margin-left: 1em;
+  }
+  .recipientsContainer {
+    margin-left: 1.25em;
+  }
+  .recipients {
+    font-size: var(--font-lg);
+  }
+}

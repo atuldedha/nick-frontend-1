@@ -1,0 +1,125 @@
+.container {
+  background-color: var(--silver);
+  max-width: 61.063em;
+  margin: 2.5em auto;
+  padding: 3.75em;
+  border-radius: 1.25em;
+}
+
+.heading {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: var(--font-xxl);
+  text-align: center;
+  max-width: 34.375em;
+  margin: auto;
+}
+
+.headingSpan {
+  color: var(--primary);
+}
+
+.subHeading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-lg);
+  text-align: center;
+  margin: 0.625em auto;
+}
+
+.dimensions {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-ml);
+  color: #464646;
+}
+
+.icon {
+  width: 6.25em;
+  height: 6.25em;
+  margin: 1.25em auto;
+  display: block;
+}
+
+.input {
+  display: none;
+}
+
+.label {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 1.25em auto;
+}
+
+.skipUploadContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.25em auto;
+}
+.skipButton {
+  width: 10em;
+  margin-left: 1em;
+  height: 2.813em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-1);
+  background-color: var(--btn-bg);
+  border: none;
+  border-radius: 0.625em;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: var(--font-medium);
+  cursor: pointer;
+  border-radius: 3.125em;
+}
+.uploadImageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10em;
+  height: 2.813em;
+  background-color: var(--primary-100);
+  color: var(--white-1);
+  border: none;
+  border-radius: 0.625em;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: var(--font-medium);
+  cursor: pointer;
+  border-radius: 3.125em;
+}
+
+.save {
+  display: block;
+  margin: 1.25em auto;
+  width: 10em;
+  height: 2.813em;
+  background-color: var(--primary-100);
+  color: var(--white-1);
+  border: none;
+  border-radius: 0.625em;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: var(--font-medium);
+  cursor: pointer;
+  border-radius: 3.125em;
+}
+.save:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+}
+
+.preview {
+  display: block;
+  margin: 1.25em auto;
+  width: 7.5em;
+  height: 7.5em;
+}

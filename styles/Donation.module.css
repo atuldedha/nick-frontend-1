@@ -1,0 +1,280 @@
+.container {
+  background-color: var(--silver);
+  margin: 2.5em 1.875em 7em 1.875em;
+  padding: 3em 1.25em 3.5em 1.25em;
+  border-radius: 1.25em;
+}
+
+.heading {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: var(--font-lg);
+  text-align: center;
+  margin: auto;
+}
+
+.headingSpan {
+  color: var(--primary);
+}
+
+.subHeading {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  text-align: center;
+  line-height: 1.1em;
+  margin-top: 0.813em;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.1em;
+  column-gap: 2.6em;
+  margin-top: 1.188em;
+}
+
+.company {
+  width: 100%;
+  max-width: 7em;
+  white-space: nowrap;
+  height: 2.813em;
+  background-color: var(--btn-bg);
+  color: var(--nav-font);
+  font-size: var(--font-sm);
+  border: none;
+  outline: none;
+  border-radius: 3.125em;
+  cursor: pointer;
+}
+
+.companySelected {
+  width: 100%;
+  max-width: 7em;
+  height: 2.813em;
+  background-color: var(--primary);
+  color: var(--nav-font);
+  font-size: var(--font-sm);
+  border: none;
+  outline: none;
+  border-radius: 3.125em;
+  cursor: pointer;
+}
+
+.individual {
+  width: 10em;
+  height: 2.813em;
+  background-color: var(--btn-bg);
+  color: var(--nav-font);
+  font-size: var(--font-sm);
+  border: none;
+  outline: none;
+  border-radius: 3.125em;
+  cursor: pointer;
+}
+
+.individualSelected {
+  width: 10em;
+  height: 2.813em;
+  background-color: var(--primary);
+  color: var(--nav-font);
+  font-size: var(--font-sm);
+  border: none;
+  outline: none;
+  border-radius: 3.125em;
+  cursor: pointer;
+}
+
+.company:hover,
+.individual:hover {
+  background-color: var(--primary);
+}
+
+.formContainer {
+  max-width: 43.75em;
+  margin: auto;
+}
+
+.formGroup {
+  width: 100%;
+  display: flex;
+  margin-top: 1.875em;
+  border: 1px solid var(--dark-gray);
+  height: 3.125em;
+  border-radius: 0.5em;
+  align-items: center;
+}
+
+.formGroup label {
+  justify-self: center;
+  width: 3.125em;
+  height: 100%;
+  border-right: 1px solid var(--dark-gray);
+  text-align: center;
+  padding-top: 0.625em;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 0.625em;
+}
+
+.valuesContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.25em;
+}
+
+.value {
+  min-width: 4.375em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  color: var(--dark-gray);
+  padding: 0 0.938em;
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+}
+
+.valueSelected {
+  min-width: 4.375em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  color: var(--dark-gray);
+  background-color: var(--primary);
+  padding: 0 0.938em;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+  color: var(--nav-font);
+}
+
+.custom {
+  min-width: 7.5em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-normal);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+}
+
+.customSelected {
+  min-width: 7.5em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-normal);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+  background-color: var(--primary);
+  color: var(--nav-font);
+}
+
+.button {
+  background-color: var(--primary-100);
+  color: var(--white-1);
+  width: 4.6em;
+  border: none;
+  font-weight: 600;
+  border-radius: 3.125em;
+  padding: 0.625em 0.25em;
+  font-size: var(--font-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 0.375em;
+  margin: 1.875em auto;
+}
+
+.companyInfo {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-ml);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    max-width: 46em;
+    margin: 2.5em auto;
+  }
+  .heading {
+    font-size: var(--font-lg);
+    line-height: 2.25em;
+    font-weight: 500;
+  }
+  .subHeading {
+    margin-top: 1.5em;
+    font-size: var(--font-medium);
+    line-height: 1.875em;
+    font-weight: 400;
+  }
+  .buttonContainer {
+    margin-top: 2.5em;
+  }
+  .company {
+   max-width: 12em;
+  }
+  .companySelected {
+    max-width: 12em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    background-color: var(--silver);
+  max-width: 61.063em;
+  margin: 2.5em auto;
+  padding: 2.5em;
+  border-radius: 1.25em;
+  }
+  .heading{
+    font-size: var(--font-xxl);
+  }
+  .subHeading {
+    font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-lg);
+  text-align: center;
+  }
+  .buttonContainer {
+    display: flex;
+  justify-content: center;
+  margin-top: 3.125em;
+  column-gap: 1.25em;
+  }
+  .company {
+    min-width: 14em;
+  }
+  .companySelected{
+    min-width: 14em;
+  }
+  .button {
+    background-color: var(--primary-100);
+    color: var(--white-1);
+    width: 4.6em;
+    border: none;
+    font-weight: 500;
+    border-radius: 3.125em;
+    padding: 0.625em 1.25em;
+    font-size: 0.875em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 0.375em;
+    margin: 1.875em auto;
+  }
+}

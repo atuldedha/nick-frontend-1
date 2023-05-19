@@ -1,0 +1,42 @@
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  border-radius: 0.625em;
+  margin-bottom: 1.375em;
+}
+.formInput {
+  padding: 0.875em;
+  border-radius: 0.625em;
+  flex-grow: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  color: #464646;
+  border: none;
+  outline: none;
+}
+.okButton {
+  padding: 0.875em;
+  text-align: center;
+  border-radius: 0.625em;
+  background-color: #c3c3c3;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 400;
+  line-height: 1.6875em;
+  color: var(--primary);
+}
+.okButton:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .formInput {
+    font-size: var(--font-normal);
+  }
+}

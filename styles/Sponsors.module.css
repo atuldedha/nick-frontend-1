@@ -1,0 +1,49 @@
+.container {
+  background-color: var(--light-gray);
+  padding: 0.25em 0;
+}
+
+.sponsorHeading {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: var(--font-lg);
+  text-align: center;
+  line-height: 1.8em;
+}
+
+.imageWrapper {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  padding: 1.2em;
+}
+
+.canadaImage {
+  width: 11.75em;
+}
+
+.montrealImage {
+  width: 6.25em;
+}
+
+.carouselItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
+
+@media screen and (min-width: 768px) {
+  .sponsorHeading {
+    font-weight: 500;
+  }
+  .canadaImage {
+    width: 26.3125em;
+  }
+  .montrealImage {
+    width: 12.5em;
+  }
+}

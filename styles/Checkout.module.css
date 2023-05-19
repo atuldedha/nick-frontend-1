@@ -1,0 +1,230 @@
+.formContainer {
+  width: 100%;
+  max-width: 30.813em;
+  display: flex;
+  flex-direction: column;
+  margin: 1.875em auto;
+}
+.formContainer > input {
+  display: block;
+  width: 100%;
+  height: 3.68em;
+  margin: 1.5em 0;
+  padding: 0 0.625em;
+  border: 1px solid var(--dark-gray);
+  border-radius: 0.313em;
+  background-color: transparent;
+  outline: none;
+}
+
+.companyInfo {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  line-height: 1.188em;
+  margin-top: 1.15em;
+  text-align: center;
+}
+
+.formGroup {
+  width: 100%;
+  display: flex;
+  margin-top: 0.938em;
+  border: 1px solid var(--dark-gray);
+  height: 3.125em;
+  border-radius: 0.5em;
+  align-items: center;
+}
+
+.formGroup label {
+  justify-self: center;
+  width: 3.125em;
+  height: 100%;
+  border-right: 1px solid var(--dark-gray);
+  text-align: center;
+  padding-top: 0.625em;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 0.625em;
+}
+
+.valuesContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.25em;
+  /* margin: 1.25em auto 0 auto; */
+  width: 100%;
+  /* max-width: 22rem; */
+}
+
+.value {
+  min-width: 3.8em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-xs);
+  color: var(--dark-gray);
+  padding: 0 0.5em;
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+}
+
+.valueSelected {
+  min-width: 3.8em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-xs);
+  color: var(--dark-gray);
+  background-color: var(--primary);
+  padding: 0 0.5em;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+  color: var(--nav-font);
+}
+
+.custom {
+  min-width: 7.5em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-normal);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+}
+
+.customSelected {
+  min-width: 7.5em;
+  height: 2.5em;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: var(--font-normal);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+  background-color: var(--primary);
+  color: var(--nav-font);
+}
+
+.button {
+  background-color: var(--primary-100);
+  color: var(--white-1);
+  width: max-content;
+  border: none;
+  font-weight: 500;
+  border-radius: 3.125em;
+  padding: 0.625em 1.25em;
+  font-size: var(--font-xs);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 0.375em;
+  margin: 1.875em auto;
+}
+.button:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+}
+
+.card {
+  width: 100%;
+  height: 3.125em;
+  padding: 0.938em 1.25em 1.25em 1.25em;
+  border-radius: 0.5em;
+  border: 1px solid var(--dark-gray);
+  font-weight: 100;
+}
+.checkbox {
+  margin-right: 0.625em;
+  cursor: pointer;
+}
+
+.countryDropdown {
+  width: 100%;
+  height: 3.125em;
+  margin: 0.625em 0;
+  padding: 0 0.625em;
+  border: 1px solid var(--dark-gray);
+  border-radius: 0.313em;
+  background-color: transparent;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .formContainer {
+    max-width: 30.813em;
+  }
+  .companyInfo {
+    text-align: center;
+    line-height: 1.168em;
+    margin-top: 5em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .formContainer {
+    max-width: 43.75em;
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  }
+
+  .formContainer > input {
+    display: block;
+    width: 100%;
+    height: 3.125em;
+    margin: 0.625em 0;
+    padding: 0 0.625em;
+    border: 1px solid var(--dark-gray);
+    border-radius: 0.313em;
+    background-color: transparent;
+    outline: none;
+  }
+
+  .valuesContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25em;
+  }
+  
+  .value {
+    min-width: 4.375em;
+    height: 2.5em;
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: var(--font-sm);
+    color: var(--dark-gray);
+    padding: 0 0.938em;
+    cursor: pointer;
+    border-radius: 0.5em;
+    border: 1px solid var(--dark-gray);
+  }
+  
+  .valueSelected {
+    min-width: 4.375em;
+    height: 2.5em;
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: var(--font-sm);
+    color: var(--dark-gray);
+    background-color: var(--primary);
+    padding: 0 0.938em;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5em;
+    border: 1px solid var(--dark-gray);
+    color: var(--nav-font);
+  }
+}

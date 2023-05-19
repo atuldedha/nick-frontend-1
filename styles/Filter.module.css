@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button {
+  width: max-content;
+  height: max-content;
+  background: var(--primary);
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: var(--font-sm);
+  line-height: 1.5em;
+  padding: 0.625em 1.5625em;
+  border: none;
+  border-radius: 3.125em;
+  white-space: nowrap;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+  }
+}

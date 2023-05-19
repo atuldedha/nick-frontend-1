@@ -1,0 +1,163 @@
+.imgContainer{
+    width: 100%;
+    background-image: '../public/history.png';
+    height: 70vh;
+}
+.mainImg{
+    width: 100%;
+    height: 100%;
+}
+.MainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.headContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+.formContainer{
+    width: 60%;
+    padding-top: 10vh;
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
+.flexRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    width: 100%;
+    padding-right: 0.8em;
+}
+.formInput {
+    width: 100%;
+    padding: 0.875em;
+    font-family: "Poppins", sans-serif;
+    font-size: var(--font-normal);
+    font-weight: 400;
+    line-height: 1.6875em;
+    background: #ffffff;
+    border-radius: 0.625em;
+    border: black solid 0.1rem;
+    margin-bottom: 1.375em;
+    margin-top: 0.8em;
+    outline: none;
+  }
+  .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    padding-right: 0.8em;
+    margin-top: 6vh;
+    margin-bottom: 20vh;
+  }
+.checkboxContainer{
+    display: flex;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+  .SubmitButton{
+    background-color: var(--primary-100);
+    color: var(--white-1);
+    width: max-content;
+    height: 100%;
+    border: none;
+    font-weight: 500;
+    border-radius: 3.125em;
+    padding: 1.725em 3.25em;
+    font-size: var(--font-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+
+.mainHeading{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.svgWrapper{
+    width: 100%;
+}
+
+/* CheckBox CSS */
+
+  /* The container */
+.checkInput {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .checkInput input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkInput:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .checkInput input:checked ~ .checkmark {
+    background-color: black;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .checkInput input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .checkInput .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }

@@ -1,0 +1,138 @@
+/* Animation */
+@keyframes shake-horizontal {
+  0%,
+  to {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-0.625em);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(0.625em);
+  }
+  80% {
+    transform: translateX(0.5em);
+  }
+  90% {
+    transform: translateX(-0.5em);
+  }
+}
+
+.container {
+  background-color: var(--white-1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+  z-index: 10;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.content h1 {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--white-1);
+}
+
+.hideButton {
+  visibility: hidden;
+}
+.content p {
+  color: var(--white-1);
+  font-size: var(--font-ml);
+  font-weight: 500;
+}
+
+@media screen and (min-width: 1200px) {
+  .content h1 {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-inter);
+    color: var(--dark-gray);
+  }
+
+  .content p {
+    font-size: var(--font-lg);
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-gray);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .content h1 {
+    font-size: var(--font-xxl);
+    font-weight: 500;
+    color: var(--dark-gray);
+  }
+
+  .content p {
+    font-size: var(--font-medium);
+    font-weight: 400;
+    color: var(--dark-gray);
+  }
+}
+
+.svgWrapper {
+  width: 90%;
+  height: 1px;
+}
+
+.button {
+  background-color: var(--primary-100);
+  color: var(--white-1);
+  width: max-content;
+  border: none;
+  font-weight: 500;
+  border-radius: 3.125em;
+  padding: 0.625em 1.25em;
+  font-size: var(--font-xs);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 0.375em;
+  animation: 4s ease 0s 1 normal forwards shake-horizontal;
+}
+
+.imageContainer {
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 340px) {
+  .imageContainer {
+    height: 21.56em;
+  }
+
+  .content {
+    height: 21.56em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .imageContainer {
+    width: 50%;
+    height: 25.625em;
+  }
+
+  .content {
+    position: relative;
+    width: 50%;
+    background: none;
+    text-align: start;
+    height: 25.625em;
+  }
+}

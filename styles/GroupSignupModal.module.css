@@ -1,0 +1,226 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-radius: 0.9375em;
+  width: 21.875em;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
+  height: 80%;
+  overflow: scroll;
+}
+
+.modalContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.modalContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.closeImage {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.125em;
+  height: 2.125em;
+  z-index: 4;
+  text-align: end;
+  top: 1.1875em;
+  right: 1.875em;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+.closeImage:hover {
+  cursor: pointer;
+}
+
+.formContainer {
+  padding: 0.3125em 1.5625em 1.5em 1.5625em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formHeading {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-medium);
+  font-weight: 600;
+  line-height: 1.9375em;
+  letter-spacing: 0em;
+  text-align: center;
+  color: black;
+  margin-top: 0.625em;
+  margin-bottom: 0.9375em;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.125em;
+}
+
+.groupNameInput {
+  width: 100%;
+  padding: 0.9375em;
+  background: #ffffff;
+  box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  border-radius: 0.625em;
+  font-family: "Inter";
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #464646;
+  border: none;
+  margin-bottom: 1.25em;
+}
+
+.formInput {
+  padding: 0.5em 0.5em;
+  font-family: "Inter";
+  width: 100%;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #464646;
+  border: none;
+  border-radius: 0.25em;
+  background: #ffffff;
+  box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  border-radius: 0.625em;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: 1em;
+  margin-left: 0.625em;
+}
+
+.countryText {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.25em;
+  letter-spacing: 0em;
+  color: black;
+  margin-right: 0.625em;
+}
+
+.checkText {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.25em;
+  letter-spacing: 0em;
+  color: black;
+  margin-right: 0.625em;
+}
+
+.registerButton {
+  background-color: var(--primary);
+  width: 100%;
+  color: #eeeeee;
+  padding: 0.5em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 3.125em;
+  border: none;
+}
+
+.bottomMargin {
+  margin-bottom: 1.4375em;
+}
+
+.leftMargin {
+  margin-left: 1.375em;
+}
+
+.registerButton:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .modalContainer {
+    width: 28.125em;
+  }
+  .formContainer {
+    padding: 1em 3.125em 1.875em 3.125em;
+  }
+  .formHeading {
+    font-size: var(--font-medium);
+    margin-top: 0.9375em;
+    margin-bottom: 1.25em;
+  }
+  .groupNameInput {
+    margin-bottom: 1.5625em;
+  }
+  .formInput {
+    padding: 0.75em 0.5em;
+  }
+  .checkboxContainer {
+    margin-bottom: 1.25em;
+  }
+  .registerButton {
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modalContainer {
+    width: 37.5em;
+  }
+  .formContainer {
+    padding: 1.125em 6.75em 2.5em 6.75em;
+  }
+  .formHeading {
+    font-size: var(--font-26);
+    margin-top: 1.125em;
+    margin-bottom: 1.5625em;
+  }
+  .groupNameInput {
+    margin-bottom: 2.1875em;
+  }
+  .formInput {
+    padding: 1em 0.625em;
+  }
+  .checkboxContainer {
+    margin-bottom: 1.5625em;
+  }
+  .registerButton {
+    font-size: var(--font-lg);
+  }
+}

@@ -1,0 +1,413 @@
+.container {
+  width: 100%;
+  margin-bottom: 0.5em;
+  height: 250px;
+  padding: 0 1.875em;
+}
+
+.cretaeEmailContainer {
+  margin-top: 0.875em;
+  display: flex;
+  flex-direction: column;
+}
+
+.backButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 3.125em;
+  margin-right: 1.8125em;
+  padding: 0.625em 1.875em;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 0.1875em 0.1875em 0;
+  display: inline-block;
+  padding: 0.3125em;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-right: 0.9375em;
+}
+
+.createEmailButtonContainer {
+  margin-top: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.createMailButton {
+  padding: 0.625em 1.75em;
+  margin-right: 0.5em;
+  border: none;
+  width: max-content;
+  text-align: center;
+  background-color: var(--primary);
+  border-radius: 3.125em;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.emailOptionsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.audienceOptionsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+
+.senderText {
+  font-family: Poppins, sans-serif;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+
+.selectedOption {
+  font-family: Poppins;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.senderInputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.senderInputValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4em;
+  border: 0.0625em solid var(--primary);
+  border-radius: 0.375em;
+  width: 100%;
+}
+
+.senderInputOptions {
+  position: absolute;
+  z-index: 10;
+  bottom: -6.3em;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 0.0625em solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.375em;
+  padding: 1.25em 0.625em;
+}
+
+.senderInputOptionName {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0.375em;
+}
+
+.senderInputOptionName:hover {
+  cursor: pointer;
+}
+.optionText {
+  margin-left: 0.5em;
+  font-family: Poppins;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.circleContainer {
+  width: 5%;
+  display: flex;
+}
+
+.circle {
+  height: 0.375em;
+  width: 0.375em;
+  margin-top: 0.635em;
+  border-radius: 50%;
+  background: var(--primary);
+}
+.audienceInputValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4em;
+  border: 0.0625em solid var(--primary);
+  border-radius: 0.375em;
+  width: 100%;
+}
+
+.audienceInputOption {
+  position: absolute;
+  bottom: -8.1em;
+  z-index: 999;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 0.0625em solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.375em;
+  padding: 1.25em 0.625em;
+}
+
+.audienceInputOptionMass {
+  position: absolute;
+  z-index: 1000;
+  bottom: -12.8em;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 0.0625em solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.375em;
+  padding: 1.25em 0.625em;
+}
+
+.goButton {
+  width: 100%;
+  padding: 0.625em 2.8125em;
+  text-align: center;
+  background: var(--primary);
+  border: none;
+  border-radius: 3.125em;
+  color: white;
+  font-family: Poppins;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  line-height: 1.5em;
+  margin-top: 1em;
+}
+
+.goButton:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 438px) {
+  .audienceInputOptionMass {
+    bottom: -10em;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  .createMailButton {
+    margin-right: 4.5em !important;
+  }
+
+  .audienceInputOption {
+    width: 21em;
+    bottom: -11.1875em;
+  }
+  .selectedOption {
+    font-size: var(--fontsm);
+  }
+
+  .optionText {
+    font-size: var(--font-normal);
+  }
+  .backButton {
+    font-size: var(--font-sm);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .selectionContainer {
+    flex-direction: row;
+    gap: 0.625em;
+    align-items: center;
+  }
+  .emailOptionsContainer {
+    width: 50%;
+  }
+  .audienceOptionsContainer {
+    margin-top: 0;
+    width: 50%;
+  }
+  .audienceInputOptionMass {
+    width: 21em;
+    bottom: -15.5em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .audienceOptionsContainer {
+    margin-top: 0;
+  }
+  .audienceInputOptionMass {
+    bottom: -15em;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .emailOptionsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .senderInputContainer {
+    margin-left: 1.5em;
+  }
+
+  .senderInputValue {
+    width: 13.5em;
+    padding: 0.625em;
+  }
+
+  .senderInputOptions {
+    bottom: -6.875em;
+    width: 13.5em;
+  }
+
+  .audienceOptionsContainer {
+    flex-direction: row;
+  }
+
+  .audienceInputValue {
+    width: 21em;
+    padding: 0.625em;
+  }
+
+  .goButton {
+    width: max-content !important;
+  }
+  .audienceInputOption {
+    bottom: -11.1875em;
+  }
+  .audienceInputOptionMass {
+    bottom: -15.5em;
+  }
+
+  .goButton {
+    margin-top: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+
+  .audienceOptionsContainer {
+    margin-top: 0;
+  }
+
+  .senderText {
+    justify-content: center;
+    font-size: var(--font-sm);
+    margin-left: 1.875em;
+    margin-left: 1.875em;
+  }
+
+  .senderText2 {
+    margin: 0 1.875em 0 1.1875em !important;
+  }
+  .goButton {
+    margin-left: 2.1875em;
+    white-space: nowrap;
+    margin-top: 0;
+  }
+
+  .createEmailButtonContainer {
+    margin-top: 2em;
+    margin-left: 0;
+  }
+
+  .cretaeEmailContainer {
+    margin-top: 2em;
+  }
+
+  .emailOptionsContainer {
+    width: max-content;
+  }
+
+  .backButtonContainer {
+    margin-bottom: 4.125em;
+  }
+
+  .audienceInputValue {
+    width: 20em;
+  }
+  .audienceInputOption {
+    width: 20em;
+    bottom: -11.1875em;
+  }
+  .audienceInputOptionMass {
+    width: 18em;
+    bottom: -19.3em;
+  }
+
+  .goButton {
+    margin-left: 2.1875em;
+    white-space: nowrap;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .contentContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+}

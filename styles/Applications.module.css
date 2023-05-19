@@ -1,0 +1,211 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 1.875em;
+}
+
+.headerText {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 2.25em;
+  color: #000000;
+  margin-top: 0.875em;
+}
+
+.applicationFilterText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+}
+
+.margin {
+  margin: 0 0.5em;
+}
+
+.applicationFilterContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+.applicationFilterLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.applicationFilterInputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.applicationFilterInputContainer:hover {
+  cursor: pointer;
+}
+
+.applicationFilterInputValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4em;
+  border: 0.0625em solid var(--primary);
+  border-radius: 0.375em;
+  width: 100%;
+}
+
+.applicationFilterInputOptions {
+  position: absolute;
+  top: 2.375em;
+  z-index: 999;
+  left: 0;
+  width: 100%;
+  height: max-content;
+  background: white;
+  border: 0.0625em solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.375em;
+  padding: 1.25em 0.625em;
+}
+
+.applicationFilterInputOptionName {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  margin-bottom: 0.375em;
+}
+
+.applicationFilterInputOptionName:hover {
+  cursor: pointer;
+}
+.optionText {
+  margin-left: 0.5em;
+  font-family: Poppins;
+  font-size: var(--font-normal);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.circleContainer {
+  width: 5%;
+  display: flex;
+}
+
+.circle {
+  height: 0.375em;
+  width: 0.375em;
+  margin-top: 0.635em;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.goButton {
+  width: 100%;
+  padding: 0.5em 1.5em;
+  white-space: nowrap;
+  text-align: center;
+  background: var(--primary);
+  border: none;
+  border-radius: 3.125em;
+  color: white;
+  font-family: Poppins;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 0.625em;
+}
+
+.goButton:hover {
+  cursor: pointer;
+}
+
+.filterContainer {
+  margin-bottom: 0.5em;
+}
+.applicationListHeader {
+  display: flex;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  align-items: center;
+  background: #ededed;
+  padding: 0.625em 1em;
+  width: 100%;
+}
+
+.listContainer {
+  width: 100%;
+  overflow: scroll;
+  height: 18.75em;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.applicationList {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  width: 50em;
+}
+.listContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.listContainer::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .applicationFilterContainer {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5em;
+    margin-bottom: 3.1875em;
+  }
+  .applicationFilterText {
+    font-size: var(--font-normal);
+  }
+  .applicationFilterLeft {
+    flex-direction: row !important;
+    align-items: center;
+  }
+  .applicationFilterInputContainer {
+    margin-left: 1.5em;
+  }
+  .headerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-lg);
+    margin-top: 3.1875em;
+  }
+  .applicationFilterInputValue {
+    width: 12.5em;
+    padding: 0.625em;
+  }
+  .applicationFilterInputOptions {
+    width: 12.5em;
+    top: 2.875em;
+  }
+  .goButton {
+    width: max-content !important;
+    margin-top: 0;
+  }
+  .applicationList {
+    width: 100%;
+  }
+  .filterContainer {
+    margin-bottom: 1.875em;
+  }
+}

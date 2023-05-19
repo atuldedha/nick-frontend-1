@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.UserSettingsContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+  align-items: center;
+  flex-direction: column;
+}
+.ButtonContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10em;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.volunteerButtonContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10em;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 0 1em;
+}
+.UserSettingsButton {
+  width: 100%;
+  padding: 1em 0.625em;
+  max-width: 21.25em;
+  background-color: var(--primary);
+  text-align: center;
+  color: #ffffff;
+  padding: 0.75 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 300;
+  line-height: 1.8125em;
+  border-radius: 3.125em;
+  margin-bottom: 3.9375em;
+  border: none;
+  cursor: pointer;
+}
+.ContactChangedButton {
+  width: 30vh;
+  height: 10vh;
+  background-color: gray;
+  text-align: center;
+  color: #ffffff;
+  padding: 0.75 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 300;
+  line-height: 1.8125em;
+  border-radius: 3.125em;
+  margin-bottom: 3.9375em;
+  border: none;
+  cursor: pointer;
+}
+.leftSection {
+  width: 100%;
+}
+
+.rightSection {
+  width: 100%;
+}
+
+.headerTitle {
+  font-size: var(--font-lg);
+  text-align: end;
+  width: 100%;
+  padding-right: 1em;
+}
+.volunteerHeaderButton {
+  width: max-content;
+  padding: 10px 20px;
+  font-family: Poppins, sans-sarif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #ffffff;
+  background-color: var(--primary);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 550px) {
+  .volunteerButtonContainer {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .UserSettingsContainer {
+    padding-top: 10em;
+  }
+  .volunteerButtonContainer,
+  .ButtonContainer {
+    margin-top: 2em;
+  }
+  .headerTitle {
+    font-size: 2em;
+    text-align: center;
+    padding-right: 0;
+  }
+  .UserSettingsButton {
+    width: 30vh;
+    height: 10vh;
+    padding: 0.625em 0;
+  }
+  .volunteerHeaderButton {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .container {
+    flex-direction: row;
+  }
+  .volunteerButtonContainer,
+  .ButtonContainer {
+    flex-direction: row;
+    margin-top: 8em;
+    gap: 1.25em;
+  }
+  .leftSection {
+    width: 25%;
+  }
+
+  .rightSection {
+    width: 75%;
+  }
+}

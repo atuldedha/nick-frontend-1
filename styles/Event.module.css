@@ -1,0 +1,36 @@
+.container {
+  background-image: url(/time.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 6.875em;
+}
+
+.content {
+  font-family: var(--font-inter);
+  color: var(--nav-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: var(--font-normal);
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1200px) {
+  .content{
+    font-weight: 700;
+    font-size: var(--font-xxl);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .content{
+    font-weight: 700;
+    font-size: var(--font-lg);
+  }
+}

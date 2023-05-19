@@ -1,0 +1,260 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-top: none;
+  border-radius: 0.9375em;
+  width: 85%;
+  max-height: 80%;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9375em;
+  background-color: var(--primary);
+  border-radius: 0.9375em;
+}
+
+.headerText {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  line-height: 1.875em;
+  letter-spacing: 0em;
+  color: white;
+  text-align: left;
+}
+
+.closeImage:hover {
+  cursor: pointer;
+}
+
+.subjectText {
+  margin: 0.9375em 0 0.625em 0.9375em;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.75em;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 0.0625em solid #000000;
+  margin-bottom: 1.375em;
+}
+
+.messageContainer {
+  background: white;
+  height: 12.25em;
+  width: 95%;
+  overflow-y: scroll;
+  overflow-wrap: normal;
+  margin: 0 0.625em 0.5em 0.625em;
+  padding: 0.875em 0.3125em 0 0.875em;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-xs);
+  font-weight: 500;
+  line-height: 1.75em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.messageContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.messageContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.875em 1.25em;
+}
+
+.modalButton {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 3.125em;
+}
+
+.modalButton:hover {
+  cursor: pointer;
+}
+
+.attachButton {
+  padding: 0.625em;
+}
+
+.forwardButton {
+  width: 100%;
+  padding: 0.625em 1.375em;
+  margin-top: 0.375em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteButton {
+  width: 100%;
+  padding: 0.625em 2em;
+  margin-top: 0.375em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attachImage {
+  margin-left: 0.375em;
+  margin-top: 0.5em;
+}
+
+.forwardImage {
+  margin-left: 0.625em;
+  margin-top: 0.5em;
+}
+
+.deleteImage {
+  margin-left: 12px;
+  margin-top: 0.5em;
+}
+
+.closeDeleteModalImage {
+  text-align: end;
+  width: 100%;
+  margin-top: 1.1875em;
+  padding-right: 1.5625em;
+  margin-bottom: 2.1875em;
+}
+
+.deleteTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.deleteText {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: var(--font-normal);
+  font-weight: 400;
+  line-height: 1.8125em;
+  letter-spacing: 0em;
+  color: black;
+  margin-bottom: 1.875em;
+}
+
+.deleteButtonContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.125em;
+}
+
+.noButton {
+  padding: 0.375em 1.875em;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 500;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  background-color: #868686;
+  color: white;
+  border: none;
+  border-radius: 3.125em;
+}
+
+.yesButton {
+  padding: 0.375em 1.875em;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 500;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  background-color: var(--primary);
+  color: white;
+  margin-left: 0.625em;
+  border: none;
+  border-radius: 3.125em;
+}
+
+@media screen and (min-width: 768px) {
+  .modalContainer {
+    max-width: 35em;
+  }
+  .buttonContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1.875em;
+  }
+
+  .messageContainer {
+    height: 9.875em;
+  }
+
+  .forwardButton {
+    width: max-content !important;
+    padding: 0.625em 1.375em;
+    margin: 0 1.25em 0 0;
+  }
+
+  .deleteButton {
+    width: max-content !important;
+    padding: 0.625em 2em;
+    margin-left: 1.25em;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .headerText {
+    font-size: var(--font-26);
+  }
+  .modalHeader {
+    padding: 1.875em;
+  }
+  .messageContainer {
+    font-size: var(--font-medium);
+    margin: 0 0.25em 0.5em 0.25em;
+    height: 15.875em;
+    padding: 1.375em 0.5em 0 1.375em;
+  }
+  .subjectText {
+    margin: 1.6875em 0 1.25em 0.9375em;
+    font-size: var(--font-lg);
+  }
+}

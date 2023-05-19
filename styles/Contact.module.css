@@ -1,0 +1,211 @@
+.contactContainer {
+  max-width: 65em;
+  margin: auto;
+}
+
+.heading {
+  font-family: var(--font-inter);
+  font-size: var(--font-lg);
+  font-weight: 500;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.125em;
+}
+
+.emailSendContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5em;
+}
+
+.doneImage {
+  height: 2.5em;
+  width: 2.5em;
+  object-fit: contain;
+}
+
+.emailSentText {
+  font-size: var(--font-lg);
+  line-height: 1.5em;
+  font-weight: 600;
+  margin-top: 0.9375em;
+  text-align: center;
+}
+
+.formContainer {
+  width: 100%;
+  padding: 1em;
+}
+
+.contentContainer {
+  width: 100%;
+  padding: 3em;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 3em;
+}
+
+.formGroup input {
+  width: 100%;
+  height: 3.125em;
+  border: 1px solid #e5e5e5;
+  background-color: var(--silver);
+  border-radius: 0.313em;
+  padding: 0 1.25em;
+  font-size: var(--font-ml);
+  font-family: var(--font-inter);
+  font-weight: 400;
+  color: var(--dark-gray);
+  margin-bottom: 1.25em;
+  outline: none;
+}
+
+.formGroup textarea {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  background-color: var(--silver);
+  border-radius: 0.313em;
+  padding: 0.313em 1.25em;
+  font-size: var(--font-ml);
+  font-family: var(--font-inter);
+  font-weight: 400;
+  color: var(--dark-gray);
+  margin-bottom: 1.25em;
+  outline: none;
+}
+
+.contactHeading {
+  color: var(--primary);
+  font-family: var(--font-inter);
+  font-size: var(--font-lg);
+  font-weight: 500;
+  margin: 0.625em 0;
+}
+
+.contactText {
+  font-family: var(--font-inter);
+  font-size: var(--font-ml);
+  color: var(--dark-gray);
+  font-weight: 400;
+  margin: 0;
+}
+
+.submitBtn {
+  display: block;
+  width: 9.375em;
+  height: 2.813em;
+  background-color: var(--primary-100);
+  border: none;
+  padding: 0.125em 1.563em;
+  border-radius: 3.125em;
+  color: var(--white-1);
+  font-size: var(--font-sm);
+  font-family: var(--font-inter);
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  align-self: flex-end;
+}
+.submitBtn:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+}
+
+.mailtoButton {
+  background: white;
+  color: black;
+  font-size: var(--font-ml);
+  text-align: center;
+  line-height: 1.5em;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+.mailtoButton:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .contentContainer {
+    max-width: 43em;
+  }
+  .formContainer {
+    max-width: 43em;
+  }
+  .contactHeading {
+    text-align: center;
+    font-size: var(--font-medium);
+    font-weight: 400;
+    line-height: 1.875em;
+    margin: 1.25em 0;
+  }
+  .contactText {
+    font-size: var(--font-sm);
+    text-align: center;
+    line-height: 1.5em;
+    font-weight: 400;
+  }
+  .heading {
+    font-size: var(--font-lg);
+    line-height: 2.25em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .submitBtn {
+    align-self: center;
+    width: 13em;
+    height: 2.5em;
+    margin-bottom: 4em;
+  }
+
+  .mailtoButton {
+    font-size: var(--font-sm);
+    line-height: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .heading {
+    font-family: var(--font-inter);
+    font-size: var(--font-26);
+    font-weight: 500;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .formContainer {
+    max-width: 50%;
+    min-width: 50%;
+    padding: 1.25em;
+  }
+
+  .submitBtn {
+    background-color: var(--primary-100);
+  }
+
+  .contentContainer {
+    width: 100%;
+    padding: 1.25em;
+  }
+}

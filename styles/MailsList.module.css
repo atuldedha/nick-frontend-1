@@ -1,0 +1,268 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.875em 0.5em 2.1875em;
+  width: 100%;
+}
+
+.emailWrapper {
+  width: 100%;
+  height: 17em;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  overflow: scroll;
+}
+
+.emailWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.emailWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.receiveEmailButton {
+  width: max-content;
+  max-width: 100%;
+  background: var(--primary);
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: var(--font-sm);
+  line-height: 0.875em;
+  padding: 0.45em 0.625em;
+  border: none;
+  border-radius: 3.125em;
+  margin-top: 10px;
+}
+
+.receiveEmailButton:hover {
+  cursor: pointer;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  padding: 0.45em 0.5625em;
+  border: 0.0625em solid #c70000;
+  border-radius: 0.625em;
+  width: 100% !important;
+  margin-top: 0.5em;
+}
+
+.searchInput {
+  font-family: Poppins;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 0.5em;
+  color: #464646;
+}
+
+.searchButton {
+  width: max-content;
+  height: max-content;
+  background: var(--primary);
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: var(--font-xs);
+  line-height: 1.5em;
+  padding: 0.625em 1em;
+  margin-top: 0.625em;
+  border: none;
+  border-radius: 3.125em;
+  margin-left: 10px;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+}
+
+.emailContainer {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  width: 50em;
+}
+
+.emailContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.emailContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.emailHeader {
+  display: flex;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  align-items: center;
+  background: #ededed;
+  padding: 0.625em 1em;
+  width: 100%;
+}
+
+.bigCheckboxContainer {
+  width: 7%;
+}
+
+.smallWidth {
+  width: 6%;
+}
+
+.bigCheckbox {
+  height: 1.875em;
+  width: 1.875em;
+  background: inherit;
+  border-radius: 0.1875em;
+  border: 0.0625em solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bigCheckbox:hover {
+  cursor: pointer;
+}
+
+.person {
+  width: 20%;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.status {
+  width: 50%;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.applicationListHeaderStatus {
+  width: 35% !important;
+}
+
+.title {
+  width: 50% !important;
+}
+
+.smallStatus {
+  width: 30% !important;
+}
+
+.alignEnd {
+  display: flex;
+  width: 20%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.volunteerPerson {
+  width: 28%;
+}
+
+.groupEmail {
+  width: 30%;
+}
+
+.volunteersPhone {
+  width: 27% !important;
+}
+
+.groupName {
+  width: 20%;
+}
+.phone {
+  width: 35%;
+}
+.headerDeleteIcon {
+  width: 20%;
+  text-align: end;
+}
+
+.searchInputButonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 760px) {
+  .person {
+    font-size: var(--font-medium);
+  }
+  .status {
+    font-size: var(--font-medium);
+  }
+  .bigCheckboxContainer {
+    width: 10%;
+  }
+
+  .receiveEmailButton {
+    line-height: 1.5em;
+    padding: 0.625em;
+    white-space: nowrap;
+  }
+  .buttonsContainer {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.875em;
+  }
+  .searchContainer {
+    padding: 1.25em 1.125em;
+    margin-left: 5.625em;
+    width: 50% !important;
+    margin-top: 0;
+  }
+
+  .searchInput {
+    font-size: var(--font-sm);
+  }
+  .searchButton {
+    font-size: var(--font-sm);
+    padding: 0.625em 2.5em;
+    margin-left: 1.125em;
+    margin-top: 0;
+  }
+  .container {
+    margin-bottom: 1.5em;
+  }
+  .applicationListHeaderStatus {
+    width: 50% !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .emailContainer {
+    width: 61.25em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .emailContainer {
+    width: 100%;
+  }
+}

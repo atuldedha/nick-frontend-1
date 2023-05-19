@@ -1,0 +1,261 @@
+.mainContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20vh;
+    padding-right: 20vh;
+}
+.formContainer{
+  margin-top: 10vh;
+}
+.formItem{
+    padding-left: 5vh;
+}
+.flexRow{
+    display: flex;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+.radioContainer{
+    margin-left: 2vh;
+}
+.RadioInputContainer{
+  display: flex;
+  width: 48vh;
+  flex-direction: column;
+  margin-left: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.imgContainer{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+.flexInput{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.radioLabel{
+    margin-left: 0.7vh;
+}
+.InputContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+.InputLabel{
+    color: #170F49;
+    font-weight:500;
+    font-size: 1rem;
+}
+.textInput{
+    background-color: #F1F1F1;
+    border: none;
+    width: 40vh;
+    height: 8vh;
+    padding-left: 2vh;
+    font-size: large;
+    border-radius: 5px;
+    margin-top: 2vh;
+    margin-left: 3vh;
+}
+.header{
+  height: 0.3vh;
+  background-color: #CCCCCC;
+}
+.heading{
+  color: #170F49;
+}
+.mainHeading{
+  color: #170F49;
+}
+
+
+/* CheckBox CSS */
+
+  /* The container */
+  .checkInput {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .checkInput input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 2px black solid;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkInput:hover input ~ .checkmark {
+    background-color: #ccc;
+
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .checkInput input:checked ~ .checkmark {
+    background-color: white;
+    border: #F0271B solid 2px;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .checkInput input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .checkInput .checkmark:after {
+      top: 3.8px;
+      left: 3.8px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #F0271B;
+  }
+
+
+
+
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modalContainer {
+    display: flex;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #EEEEEE;
+    border: 0.125em solid #000000;
+    border: none;
+    border-radius:  0.9375em;
+    width: 35em;
+}
+.modalHeading{
+  color: #170F49;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.modalHeadingContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.buttonContainer{
+
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;  
+}
+.submitButton{
+  height: 8vh;
+  border: none;
+  cursor: pointer;
+  width: 25vh;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 3vh;
+  background: linear-gradient(245.87deg, #F0271B -10.63%, #CCCCCC 221.67%);
+box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+border-radius: 56px;
+}
+.backButton{
+color: #F0271B;
+border: 5px solid #F0271B;
+height: 8vh;
+cursor: pointer;
+  width: 25vh;
+  font-size: 1.5rem;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 56px;
+}
+
+
+
+/* 
+
+.customRadio {
+  position: absolute;
+  opacity: 0;
+}
+
+.customRadio + label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+}
+
+.customRadio + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  
+  border: 1px solid #000;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.customRadio:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 10px;
+  color: red;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+} */

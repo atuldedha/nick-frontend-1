@@ -1,0 +1,48 @@
+.tabletMenuItem {
+    width: 50vw;
+    opacity: 1;
+    font-size: var(--font-medium);
+    font-weight: 500;
+    line-height: 1.875em;
+    padding: .6em 2em .6em 2em;
+    transition: all 200ms ease-in-out;
+    text-align: end;
+  }
+
+.tabletMenuItem:hover{
+    background: #850101;
+}
+
+.divider {
+    width: 45vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+    align-self: center;
+  }
+
+.button {
+    background-color: #850101;
+    color: var(--nav-font);
+    border: 0.063em solid var(--nav-font);
+    border-radius: 3.125em;
+    padding: 0.45em 1.25em;
+    font-size: var(--font-medium);
+    cursor: pointer;
+    width: 100%;
+    margin: 0.6em 0 2.6em 0;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    .button {
+      background-color: var(--nav-font);
+      color: var(--primary);
+      border: 0.063em solid var(--nav-font);
+      border-radius: 3.125em;
+      padding: 0.375em 1.25em;
+      font-size: var(--font-xs);
+      cursor: pointer;
+      margin-top: 3em;
+      margin-right: 2em;
+      width: max-content;
+      align-self: end;
+    }
+  }

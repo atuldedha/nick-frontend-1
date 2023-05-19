@@ -1,0 +1,17 @@
+.textContainer {
+  font-family: var(--font-inter);
+  width: 90%;
+  margin: 8.625em auto;
+  font-weight: 400;
+  font-size: var(--font-sm);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .textContainer {
+    font-size: var(--font-medium);
+  }
+}

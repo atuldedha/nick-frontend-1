@@ -1,0 +1,53 @@
+.container {
+  padding: 3.5em 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.volunteerDashboardContainer {
+  padding: 1.2em 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 0.0625em solid #000000;
+  margin: 1.5em 0;
+}
+.volunteerContentWrapper {
+  width: 100%;
+  margin-top: 12em;
+}
+.volunteerHeaderButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .divider {
+    margin: 2.5em 0;
+  }
+  .volunteerHeaderButtonWrapper {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .volunteerDashboardContainer,
+  .container {
+    padding: 3.75em 6.375em 2em;
+  }
+  .volunteerContentWrapper {
+    margin-top: 0;
+  }
+}

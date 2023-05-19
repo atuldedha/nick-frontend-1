@@ -1,0 +1,192 @@
+.mailCard {
+  display: flex;
+  align-items: center;
+  padding: 1.375em 0.625em;
+  width: 100%;
+  border-bottom: 0.0625em solid #868686;
+}
+
+.smallCheckContainer {
+  width: 7%;
+}
+
+.smallCheck {
+  height: 1.25em;
+  width: 1.25em;
+  border: 0.0625em solid black;
+  border-radius: 0.1875em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.9375em;
+}
+
+.name {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  width: 30%;
+  margin-left: 10px;
+}
+.removeMargin {
+  margin: 0;
+}
+
+.countryName {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  width: 28%;
+}
+
+.readMailContainer {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+.readButtonContainer {
+  width: 20%;
+  text-align: end;
+}
+
+.email {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  width: 60%;
+}
+
+.readButton {
+  background: var(--primary);
+  padding: 0.5em 1.75em;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  line-height: 1.25em;
+  letter-spacing: 0em;
+  color: white;
+  border: none;
+  border-radius: 3.125em;
+  text-align: left;
+}
+
+.readButton:hover {
+  cursor: pointer;
+}
+
+.divider {
+  border-bottom: 0.0625em solid #868686;
+  width: 100%;
+}
+
+.flexColContainer {
+  display: flex;
+  flex-direction: column;
+  width: 46%;
+}
+
+.sentName {
+  white-space: nowrap;
+  font-weight: 500 !important;
+  margin-left: 0 !important;
+}
+
+.sentMessage {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 3.125em;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.flexRowContainer {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.readSentMailContainer {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.date {
+  margin-left: 0.25em;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.groupName {
+  width: 20% !important;
+}
+
+.groupEmail {
+  width: 28% !important;
+}
+.bigWidth {
+  width: 30% !important;
+}
+
+.groupCountryName {
+  width: 24% !important;
+}
+
+@media screen and (min-width: 768px) {
+  .smallCheckContainer {
+    width: 10%;
+  }
+  .readButton {
+    padding: 0.3125em 1.75em;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: var(--font-medium);
+    font-weight: 600;
+    line-height: 1.875em;
+  }
+  .email {
+    font-size: var(--font-normal);
+  }
+  .sentMessage {
+    font-size: var(--font-normal);
+  }
+  .date {
+    font-size: var(--font-normal);
+  }
+  .name {
+    width: 20%;
+    font-size: var(--font-normal);
+    margin-left: 0;
+  }
+
+  .readMailContainer {
+    width: 50%;
+  }
+  .groupCountryName {
+    width: 20% !important;
+  }
+}

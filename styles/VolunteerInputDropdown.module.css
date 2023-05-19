@@ -1,0 +1,50 @@
+.formInput {
+  width: 100%;
+  padding: 0.9375em;
+  background: #ffffff;
+  box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  border-radius: 0.625em;
+  position: relative;
+}
+.selectedCobnt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.selectedOption,
+.optionText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.6875em;
+  color: #464646;
+}
+.optionText:hover {
+  cursor: pointer;
+}
+
+.optionContainer {
+  position: absolute;
+  padding: 0.5em 0.75em 1.3em;
+  top: 3.75em;
+  left: 0;
+  right: 0;
+  border-radius: 0.625em;
+  width: 100%;
+  height: 5em;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .optionText {
+    font-size: var(--font-normal);
+  }
+  .optionContainer {
+    padding: 0.875em 0.9375em 1.25em;
+    height: 8.375em;
+  }
+}

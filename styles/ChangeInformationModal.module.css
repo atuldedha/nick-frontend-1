@@ -1,0 +1,150 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-top: none;
+  border-radius: 0.9375em;
+  width: 90%;
+  max-width: 50em;
+  position: relative;
+  padding: 0 1em;
+}
+
+.closeDeleteModalImage {
+  position: absolute;
+  right: 0.625em;
+  top: 0.625em;
+  margin-top: 1.1875em;
+  padding-right: 1.5625em;
+  margin-bottom: 2.1875em;
+}
+.closeDeleteModalImage:hover {
+  cursor: pointer;
+}
+
+.headerText {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-medium);
+  font-weight: 600;
+  flex-grow: 1;
+  text-align: center;
+  line-height: 1.9375em;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  margin-top: 1.625em;
+  margin-bottom: 0.6875em;
+}
+
+.inputCont {
+  width: 100%;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 0;
+}
+
+.changeText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 500;
+  line-height: 1.6875em;
+  margin-right: 1.0625em;
+  margin-left: 0.5em;
+  color: var(--primary);
+  padding-bottom: 1.25em;
+  text-align: end;
+}
+.changeText:hover {
+  cursor: pointer;
+}
+
+.addButton {
+  width: 100%;
+  background-color: var(--primary);
+  text-align: center;
+  color: #ffffff;
+  padding: 0.5em 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 1em;
+  border-radius: 3.125em;
+  margin-bottom: 4.375em;
+  border: none;
+  margin-left: 0;
+  margin-top: 0.625em;
+}
+.addButton:hover {
+  cursor: pointer;
+}
+.margin {
+  margin-left: 5.625em;
+  margin-bottom: 1.125em;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 0;
+}
+
+.row2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .headerText {
+    font-size: var(--font-26);
+    margin-top: 3.625em;
+    margin-bottom: 2.6875em;
+  }
+  .inputCont {
+    width: 29em !important;
+  }
+  .flexRow {
+    padding-left: 4em;
+  }
+  .addButton {
+    width: 20em !important;
+    margin-left: 3.625em;
+    font-size: var(--font-lg);
+    line-height: 1.8125em;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 830px) {
+  .row1 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 4em;
+  }
+  .changeText {
+    text-align: left;
+  }
+}

@@ -1,0 +1,38 @@
+.container {
+  position: absolute;
+  top: 1.75em;
+  right: 0.3125em;
+  z-index: 4;
+  background: #464646;
+  border-radius: 0.3125em;
+  padding: 0.9375em 0.8em;
+  width: 8.75em;
+}
+
+.optionContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.optionContainer:hover {
+  cursor: pointer;
+}
+
+.optionText {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.875em;
+  margin-left: 0.5em;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0.9375em 1.0625em;
+    width: 10.75em;
+  }
+  .optionText {
+    font-size: var(--font-medium);
+  }
+}

@@ -1,0 +1,221 @@
+.container {
+  padding: 2em;
+  margin: auto;
+}
+
+.heading {
+  font-family: var(--font-inter);
+  font-size: var(--font-normal);
+  font-weight: 500;
+  text-align: center;
+}
+
+.subheading {
+  font-family: var(--font-inter);
+  font-size: var(--font-medium);
+  font-weight: 500;
+  text-align: center;
+}
+
+.opportunityHeading {
+  font-family: var(--font-inter);
+  font-size: var(--font-lg);
+  color: var(--primary);
+  font-weight: 500;
+  text-align: center;
+}
+
+.opportunityGroups {
+  font-family: var(--font-inter);
+  font-size: var(--font-lg);
+  color: var(--nav-font);
+  font-weight: 500;
+  line-height: 1.8em;
+  text-align: center;
+}
+
+.listContainer {
+  max-width: 34.375em;
+  margin: auto;
+}
+
+.listStyle {
+  background-color: var(--primary);
+  position: absolute;
+  top: 0.6em;
+  left: 0.817em;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.875em;
+  height: 0.188em;
+  background-size: cover;
+  border-radius: 0.125em;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 0.313em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.list p {
+  margin: 0.188em 3.16em;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.25em;
+}
+
+.paraContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.625em 0 0.625em 3em;
+}
+
+.simpleParagraph {
+  font-family: var(--font-inter);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 1.9em;
+}
+
+.simpleParagraphNote {
+  font-family: var(--font-inter);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  line-height: 1.9em;;
+}
+
+.buttonVoluntier {
+  background-color: var(--primary);
+  color: var(--nav-font);
+  font-size: var(--font-sm);
+  border: none;
+  padding: 0.5em 0.938em;
+  border-radius: 3.125em;
+  display: block;
+}
+
+.buttonVoluntier:hover{
+  cursor: pointer;
+}
+
+.background {
+  background-color: var(--primary);
+  color: var(--nav-font);
+  padding: 2.5em 0;
+  margin-top: 2.5em;
+}
+
+.listStyleWhite {
+  background-color: white;
+  position: absolute;
+  top: 1.4em;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.125em;
+  width: 1.875em;
+  height: 0.188em;
+  background-size: cover;
+}
+
+.button {
+  background-color: var(--nav-font);
+  font-size: var(--font-sm);
+  border: none;
+  padding: 0.5em 0.938em;
+  border-radius: 3.125em;
+  display: block;
+  line-height: 1.5em;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+.participantListContainer {
+  max-width: 34.375em;
+  margin: auto;
+}
+
+.participantList {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 0.313em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.listItem {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.25em;
+  margin-left: 2.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .heading {
+    font-size: var(--font-lg);
+  }
+
+  .subheading {
+    font-size: var(--font-sm);
+  }
+
+  .opportunityHeading {
+    font-size: var(--font-xxl);
+    font-weight: 600;
+  }
+
+  .list p {
+    margin: 0.188em 0 0.188em 4.16em;
+    font-size: var(--font-lg);
+    line-height: 2.25em;
+  }
+
+  .listStyleWhite {
+    top: 3.1em;
+  }
+
+  .listStyle {
+    top: 1.8em;
+    left: 3.817em;
+  }
+
+  .paraContainer {
+    margin-left: 6em;
+    align-items: flex-start;
+  }
+
+  .simpleParagraph {
+    font-size: var(--font-medium);
+    line-height: 1.875em;
+    font-weight: 300;
+  }
+
+  .simpleParagraphNote {
+    font-size: var(--font-medium);
+    font-weight: 400;
+    line-height: 1.875em;
+  }
+
+  .button {
+    font-size: var(--font-xs);
+    line-height: 1.3em;
+  }
+
+  .opportunityGroups {
+    font-size: var(--font-xxl);
+    font-weight: 600;
+    line-height: 3em;
+  }
+  .listItem {
+    font-size: var(--font-lg);
+    line-height: 2.25em;
+  }
+}

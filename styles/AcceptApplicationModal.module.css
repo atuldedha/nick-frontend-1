@@ -1,0 +1,55 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  background: #eeeeee;
+  border: 0.125em solid #000000;
+  border-top: none;
+  width: 90%;
+  max-width: 37.5em;
+  border-radius: 0.9375em;
+}
+
+.closeDeleteModalImage {
+  text-align: end;
+  width: 100%;
+  margin-top: 1.1875em;
+  padding-right: 1.5625em;
+  margin-bottom: 2.1875em;
+}
+.closeDeleteModalImage:hover {
+  cursor: pointer;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 2.25em;
+  padding: 0 2.5em 6.0625em;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+  .modalTitle {
+    font-size: var(--font-lg);
+  }
+}
