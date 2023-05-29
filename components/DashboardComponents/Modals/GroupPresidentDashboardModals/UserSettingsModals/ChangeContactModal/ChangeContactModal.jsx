@@ -5,7 +5,7 @@ import Image from "next/image";
 import AuthContext from "../../../../../../context/AuthContext";
 import GroupContext from "../../../../../../context/GroupContext";
 
-const ChangeContactModal = ({ formData, closeModal, changeSucessfull }) => {
+const ChangeContactModal = ({ formData, closeModal, changeSucessfull, t }) => {
   const { token, user, setToken, getToken } = useContext(AuthContext);
   const { findGroup, handleChangeContact } = useContext(GroupContext);
 
@@ -33,7 +33,7 @@ const ChangeContactModal = ({ formData, closeModal, changeSucessfull }) => {
       changeSucessfull();
     });
   }
-
+  console.log(t);
   return (
     <div className={styles.container}>
       <div className={styles.modalContainer}>
@@ -48,42 +48,44 @@ const ChangeContactModal = ({ formData, closeModal, changeSucessfull }) => {
           />
         </div>
         <p className={styles.headerText}>
-          Are you Sure you want to make Contact <br />
-          Number 2 as Contact Number 1?
+          {t?.changeContactModal?.headerText1} <br />
+          {t?.changeContactModal?.headerText2}
         </p>
         <div className={styles.formContainer}>
           <div className={styles.inputContainer}>
             {/* custom input component */}
             <ApplicationInput
               name="secretaryName"
-              placeholder="Person"
+              placeholder={t?.changeContactModal?.personText}
               value={
-                secondaryContact?.firstName + " " + secondaryContact?.lastName
+                secondaryContact?.firstName +
+                  " " +
+                  secondaryContact?.lastName || ""
               }
             />
             {/* custom input component */}
             <ApplicationInput
               name="secretaryEmail"
-              placeholder="Email"
-              value={secondaryContact?.email}
+              placeholder={t?.changeContactModal?.emailText}
+              value={secondaryContact?.email || ""}
             />
             {/* custom input component */}
             <ApplicationInput
               name="secretaryPhone"
-              placeholder="Phone"
-              value={secondaryContact?.phoneNumber}
+              placeholder={t?.changeContactModal?.phoneText}
+              value={secondaryContact?.phoneNumber || ""}
             />
           </div>
           {/* button to add new volunteer */}
           <div className={styles.flexRow}>
             <button onClick={closeModal} className={styles.CancelButton}>
-              No
+              {t?.changeContactModal?.noText}
             </button>
             <button
               onClick={handleMainContactChange}
               className={styles.SubmitButton}
             >
-              Yes
+              {t?.changeContactModal?.yesText}
             </button>
           </div>
         </div>

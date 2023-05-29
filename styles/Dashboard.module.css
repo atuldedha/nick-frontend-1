@@ -57,7 +57,7 @@
   font-weight: 300;
   line-height: 1.8125em;
   border-radius: 3.125em;
-  margin-bottom: 3.9375em;
+  /* margin-bottom: 3.9375em; */
   border: none;
   cursor: pointer;
 }
@@ -96,12 +96,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .UserSettingsContainer {
-    padding-top: 10em;
-  }
   .volunteerButtonContainer,
   .ButtonContainer {
-    margin-top: 2em;
+    margin-top: 10em;
   }
   .headerTitle {
     font-size: 2em;
@@ -109,7 +106,6 @@
     padding-right: 0;
   }
   .UserSettingsButton {
-    width: 30vh;
     height: 10vh;
     padding: 0.625em 0;
   }
@@ -121,6 +117,12 @@
 @media screen and (min-width: 1100px) {
   .container {
     flex-direction: row;
+  }
+  .UserSettingsButton {
+    width: 35vh;
+  }
+  .UserSettingsContainer {
+    padding-top: 10em;
   }
   .volunteerButtonContainer,
   .ButtonContainer {

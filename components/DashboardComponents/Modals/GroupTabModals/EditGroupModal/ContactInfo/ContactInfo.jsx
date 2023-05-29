@@ -10,6 +10,7 @@ const ContactInfo = ({
   handleButtonClick,
   handleChange,
   newData,
+  t,
 }) => {
   const [firstNameEditable, setFirstNameEditable] = useState(false);
   const [lastNameEditable, setLastNameEditable] = useState(false);
@@ -70,7 +71,9 @@ const ContactInfo = ({
           className={styles.changeText}
           onClick={() => setFirstNameEditable(!firstNameEditable)}
         >
-          {firstNameEditable ? "cancel" : "change"}
+          {firstNameEditable
+            ? t?.editGroupModal?.cancelText
+            : t?.editGroupModal?.changeText}
         </span>
         <div className={styles.inputCont}>
           {/* custom input component */}
@@ -92,7 +95,9 @@ const ContactInfo = ({
           className={styles.changeText}
           onClick={() => setLastNameEditable(!lastNameEditable)}
         >
-          {lastNameEditable ? "cancel" : "change"}
+          {lastNameEditable
+            ? t?.editGroupModal?.cancelText
+            : t?.editGroupModal?.changeText}
         </span>
         <div className={styles.inputCont}>
           {/* custom input component */}
@@ -114,7 +119,9 @@ const ContactInfo = ({
             className={styles.changeText}
             onClick={() => setEmailEditable(!emailEditable)}
           >
-            {emailEditable ? "cancel" : "change"}
+            {emailEditable
+              ? t?.editGroupModal?.cancelText
+              : t?.editGroupModal?.changeText}
           </span>
           <div className={styles.inputCont}>
             {/* custom input component */}
@@ -143,7 +150,9 @@ const ContactInfo = ({
           className={styles.changeText}
           onClick={() => setPhoneEditable(!phoneEditable)}
         >
-          {phoneEditable ? "cancel" : "change"}
+          {phoneEditable
+            ? t?.editGroupModal?.cancelText
+            : t?.editGroupModal?.changeText}
         </span>
         <div className={styles.inputCont}>
           {/* custom input component */}

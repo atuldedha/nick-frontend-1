@@ -3,13 +3,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 51px 14px 0;
+  padding: 0.5em 0.875em 0;
   position: relative;
   overflow-x: hidden;
 }
 .heading {
   width: 100%;
-  text-align: center;
+  text-align: end;
   font-family: "Poppins", sans-serif;
   font-size: var(--font-lg);
   font-weight: 600;
@@ -56,6 +56,15 @@
   flex-direction: column;
   overflow: scroll;
   width: 50em;
+}
+
+@media screen and (min-width: 568px) {
+  .container {
+    padding-top: 3.1875em;
+  }
+  .heading {
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 768px) {

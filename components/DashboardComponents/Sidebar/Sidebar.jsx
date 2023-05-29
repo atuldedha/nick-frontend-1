@@ -7,10 +7,25 @@ import { useWindowSize } from "../../../utils/WindowResizeHook";
 import { sidebarOptionsData, groupPresidentOptions } from "./staticData";
 import SidebarOptions from "./SidebarOptions";
 import AuthContext from "../../../context/AuthContext";
+import { useRouter } from "next/router";
+import fr from "../../../locales/fr";
+import en from "../../../locales/en";
 
 const Sidebar = ({ selected, setSelected, isSysOp }) => {
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
+
   const [width, height] = useWindowSize();
   const [openMenu, setOpenMenu] = useState(false);
+
+  // sidebar data
+  const [adminSidebarData, setAdminSidebarData] = useState([]);
+  const [groupPresidentSidebarData, setGroupPresidentSidebarData] = useState(
+    []
+  );
+
   const { logoutUser } = useContext(AuthContext);
   // handle selection for the option change
   const handleSelection = (index) => {
@@ -26,18 +41,36 @@ const Sidebar = ({ selected, setSelected, isSysOp }) => {
     }
   }, [width]);
 
+  useEffect(() => {
+    const adminSidebar = sidebarOptionsData?.map((data, index) => {
+      return {
+        ...data,
+        text: t?.adminDashboard?.sidebar[index]?.text,
+      };
+    });
+
+    const groupPresidentSidebar = groupPresidentOptions?.map((data, index) => {
+      return {
+        ...data,
+        text: t?.groupPresidentDashboard?.sidebar[index]?.text,
+      };
+    });
+
+    setGroupPresidentSidebarData(groupPresidentSidebar);
+    setAdminSidebarData(adminSidebar);
+  }, [t]);
+
   return (
     <>
       {width < parseFloat(1100) && (
         // Menu Image if width is smaller then 1100 to open and close sidebar
-        <div className={styles.menuContainer}>
+        <div className={styles.menuContainer} onClick={() => setOpenMenu(true)}>
           <Image
             src="/mobileMenuOpen.png"
             alt="menu"
             width="18px"
             height="18px"
             objectFit="contain"
-            onClick={() => setOpenMenu(true)}
           />
         </div>
       )}
@@ -59,7 +92,7 @@ const Sidebar = ({ selected, setSelected, isSysOp }) => {
               {/* Sidebar middle section  */}
               {isSysOp ? (
                 <div className={styles.optionContainer}>
-                  {sidebarOptionsData.map((option, index) => (
+                  {adminSidebarData?.map((option, index) => (
                     <SidebarOptions
                       key={index}
                       selected={selected === index + 1}
@@ -73,7 +106,7 @@ const Sidebar = ({ selected, setSelected, isSysOp }) => {
                 </div>
               ) : (
                 <div className={styles.groupPresidentOptionContainer}>
-                  {groupPresidentOptions.map((option, index) => (
+                  {groupPresidentSidebarData?.map((option, index) => (
                     <SidebarOptions
                       key={index}
                       selected={selected === index + 1}
@@ -96,19 +129,18 @@ const Sidebar = ({ selected, setSelected, isSysOp }) => {
                   height="29px"
                   objectFit="contain"
                 />
-                <span className={styles.logoutText}>Logout</span>
+                <span className={styles.logoutText}>{t?.logoutText}</span>
               </div>
             </div>
           </div>
           {width < parseFloat(1100) && (
-            <div className={styles.close}>
+            <div className={styles.close} onClick={() => setOpenMenu(false)}>
               <Image
                 src="/close.png"
                 alt="close"
                 width="15px"
                 height="15px"
                 objectFit="contain"
-                onClick={() => setOpenMenu(false)}
               />
             </div>
           )}

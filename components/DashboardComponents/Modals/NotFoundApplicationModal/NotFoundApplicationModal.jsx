@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import styles from "../../../../styles/AcceptApplicationModal.module.css";
 
 // Accept Application Modal Component
-const NotFoundApplicationModal = ({ closeModal }) => {
+const NotFoundApplicationModal = ({ closeModal, t }) => {
   useEffect(() => {
     setTimeout(() => {
       closeModal();
@@ -23,7 +23,7 @@ const NotFoundApplicationModal = ({ closeModal }) => {
           />
         </div>
         <span className={styles.modalTitle}>
-          No Application Found for this year.
+          {t?.groupPresidentDashboard?.noApplicationFoundText}
         </span>
       </div>
     </div>

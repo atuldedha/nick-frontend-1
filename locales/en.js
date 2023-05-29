@@ -180,7 +180,16 @@ export default {
     title:
       "Thank you, your inquiry has been sent and will be responded to shortly",
   },
-  //
+
+  login: {
+    loginText: "Login",
+    emailText: "Email",
+    passwordText: "Password",
+    signInText: "Sign In",
+    loadingText: "Loading...",
+  },
+
+  //signup modals
   signupModal: {
     volunteerSignupTitle: "Register as Volunteer",
     groupSignupTitle: "Register as Group",
@@ -201,11 +210,29 @@ export default {
     loading: "Loading",
     register: "Register",
   },
+
   // for admin dashboard
   adminDashboard: {
+    // sidebar
+    sidebar: [
+      {
+        text: "Email",
+      },
+      {
+        text: "Walkie Talkie System",
+      },
+      {
+        text: "Received Applications",
+      },
+      {
+        text: "Group List",
+      },
+      {
+        text: "Volunteers List",
+      },
+    ],
     // email section
     emailSection: {
-      sidebarText: "Email",
       createEmailButtonText: "Create Email",
       backButtonText: "Back",
       goButtonText: "Go",
@@ -234,10 +261,11 @@ export default {
       walkieTalkieText: "Walkie Talkie",
       containerInactiveButtonText: "Press / Hold to talk",
       containerActiveButtonText: "Talking",
+      membersText: "Members",
+      statusText: "Status",
     },
     // received applications
     receivedApplications: {
-      sidebarText: "Received Applications",
       headerText: "Applictions",
       applicationFilterText1: "I want to see the group applications for",
       applicationFilterText2: "that are",
@@ -248,13 +276,13 @@ export default {
     },
     // group list
     groupList: {
-      sidebarText: "Group List",
       headerText: "Group List",
+      addGroupText: "Add group",
     },
     // volunteers list
     volunteersList: {
-      sidebarText: "Volunteers List",
       headerText: "Volunteers List",
+      addVolunteerText: "Add volunteer",
     },
     // search bar
     searchBar: {
@@ -268,14 +296,199 @@ export default {
     tableHeader: {
       personHeaderText: "Person",
       groupNameHeaderText: "Group Name",
-      EmailHeaderText: "Email",
+      emailHeaderText: "Email",
       countryHeaderText: "Country",
       titleHeaderText: "Title",
       statusHeaderText: "Status",
       volunteerNameHeaderText: "Volunteer Name",
       phoneHeaderText: "Phone",
     },
+  },
 
-    logoutText: "Logout",
+  // logout text
+  logoutText: "Logout",
+
+  // for group president dashboard
+  groupPresidentDashboard: {
+    sidebar: [{ text: "Dashboard" }, { text: "UserSettings" }],
+    dashboard: {
+      previousApplicationsText: "Previous Applications",
+      filterText: "I want to see the group applications for",
+      goButtonText: "Go",
+      contactInformationText: "Contact Information",
+      contactSecretaryButtonText: "Contact Sectretary",
+      applicationStatusText: "Application Status",
+      currentApplicationStatusText: "Current Application Status",
+      secretaryDetailsText: "Secretary Details",
+    },
+    noApplicationFoundText: "No Application Found for this year.",
+    userSettings: {
+      primaryContactHeaderText: "Primary Contact",
+      secondaryContactHeaderText: "Secondary Contact",
+      button1Text: "Change Your Information",
+      button2Text: "Make secondary contact primary contact",
+      button3Text: "Delete Your Account",
+    },
+  },
+
+  // delete modal
+  deleteModal: {
+    text: "Are you sure you want to delete",
+    boldText: "ALL",
+    selectedText: "selected",
+    deletingText: "Deleting...",
+    noButtonText: "No",
+    yesButtonText: "Yes",
+  },
+  // read mail modal
+  readMailModal: {
+    headerText: "Read Message",
+    subjectText: "Subject",
+    forwardText: "Forward",
+    replyText: "Reply",
+    deleteText: "Delete",
+  },
+  // send mail modal
+  sendMailModal: {
+    newMessageText: "New Message",
+    replyText: "Reply",
+    forwardText: "Forward",
+    subjectText: "Subject",
+    toText: "To",
+    attachFileText: "Attach a file",
+    sendText: "Send",
+    sendingText: "Sending...",
+    errorText: "Error",
+  },
+
+  // read group application modal
+  readApplicationModal: {
+    headerText: "Received Application Form",
+    organizationNameText: "Name of organization",
+    groupPresidentText: "Group President",
+    emailText: "Email",
+    phoneText: "Phone",
+    representCountryText: "Represent any country",
+    whichCountryText: "Which Country",
+    question1: " Will your group have walkers",
+    question1A: "How many people will be walking in your group?",
+    question2: "Are you going to bring any cars?",
+    question2A:
+      "How many cars (All cars must be decorated and any undecorated car will be remoe from parade)?",
+    question3: "Are you going to bring any SUVs?",
+    question3A: "How many SUVs",
+    question4: "Are you going to bring any Pick-Up Trucks?",
+    question4A: "How many?",
+    question4B: "What brand / type?",
+    question5:
+      "Are you going to bring any trailers attached to your SUV, Car or Pickup Truck?",
+    question5A:
+      "How long is the total length from the front of the car to the end of the trailer in feet(Round up to the nearest foot, Please note we have a maximum limit of 28 ft in length)?",
+    question6: "Are you bringing any floats?",
+    question6A:
+      "What is the length of the float in feet (maximum limit of 28 ft in length)?",
+    question6B: "Do you have a fire extinguisher on the float (mandatory)?",
+    question7: "Are you bringing any animals?",
+    question7A: "Will you be bringing horses?",
+    question7A1:
+      "You will need to provide the parade with a certificate of insurance papers Are they insured?",
+    question7A2: "How many you will be bringing?",
+    question7B: "Will you be bringing any dogs?",
+    question7B1: "How many dogs?",
+    question7C: "Are you bringing any other animals?",
+    question7C1: "Specify number and type of each?",
+    rejectText: "Reject",
+    cancelText: "Cancel",
+    editText: "Edit",
+    acceptText: "Accept",
+    saveText: "Save",
+  },
+
+  // edit group application modal
+  // used same for edit volunteer
+  editGroupModal: {
+    // for group
+    headerText: "Edit Group",
+    selectContactText: "Please select primary contact",
+    contact1Text: "Contact 1",
+    contact2Text: "Contact 2",
+    changeText: "change",
+    cancelText: "cancel",
+    resetPasswordText: "Reset Password",
+    representingCountryText: "Are you representing any country?",
+    saveText: "Save",
+    savingText: "Saving...",
+    // for volunteer
+    volunteerHeaderText: "Edit Volunteer",
+  },
+
+  // change volunteer info modal
+  changeVolunteerInformationModal: {
+    headerText: "Change Information",
+    changeText: "change",
+    cancelText: "cancel",
+    resetPasswordText: "Reset Password",
+    saveText: "Save",
+    savingText: "Saving...",
+  },
+
+  // delete volunteer modal
+  deleteVolunteerModal: {
+    text: " In order to delete your account please contact your secreatary",
+  },
+
+  // vip page
+  vipInvite: {
+    montrealParadeText: "Canada Day Parade 2023",
+    vipInviteText: "VIP Invitation",
+    vipForm: {
+      vipNameText: "VIP Name",
+      phoneText: "Phone Number",
+      emailText: "Email",
+      organizationNameText: "Organization Name",
+      roleInOrganizationText: "Your Role in Organiztion",
+      bringSomeoneText: "Do you want to bring someone else with you?",
+      submitText: "Submit",
+      mailSentText: "VIP Request Sent",
+    },
+  },
+
+  // volunteer position modal
+  volunteerPositionModal: {
+    headerText: "Which Postition you would like to be in?",
+    positions: [
+      "Senior line controller",
+      "Junior line controller",
+      "Parade route volunteer",
+      "Cake area volunteer",
+      "Water area volunteer",
+      "General volunteers",
+      "VIP stage volunteers",
+    ],
+    mailSentText: "Welcome to this year's parade. You will be contacted soon.",
+    cancelText: "Cancel",
+    applyText: "Apply",
+  },
+
+  // add volunteer modal
+  addVolunteer: {
+    addVolunteerText: "Add Volunteer",
+    firstNameText: "First Name",
+    lastNameText: "Last Name",
+    emailText: "Email",
+    phoneNumberText: "Phone",
+    addingText: "Adding...",
+    addText: "Add",
+  },
+
+  // change contact modal
+  changeContactModal: {
+    headerText1: "Are you Sure you want to make Contact",
+    headerText2: "Number 2 as Contact Number 1?",
+    personText: "Person",
+    emailText: "Email",
+    phoneText: "Phone",
+    yesText: "Yes",
+    noText: "No",
   },
 };

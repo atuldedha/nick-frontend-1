@@ -13,15 +13,18 @@ const PreviousApplications = ({
   selectedYear,
   setSelectedYear,
   handleClick,
+  t,
 }) => {
   const [yearOptionActive, setYearOptionActive] = useState(false);
 
   return (
     <div className={styles.container}>
-      <span className={styles.title}>Previous Applications</span>
+      <span className={styles.title}>
+        {t?.groupPresidentDashboard?.dashboard?.previousApplicationsText}
+      </span>
       <div className={styles.applicationFilterLeft}>
         <span className={styles.applicationFilterText}>
-          I want to see the group applications for
+          {t?.groupPresidentDashboard?.dashboard?.filterText}
         </span>
         {/* Selected Year dropdown component */}
         <ApplicationYearSelect
@@ -30,11 +33,12 @@ const PreviousApplications = ({
           setYearOptionActive={setYearOptionActive}
           yearOptionActive={yearOptionActive}
           handleYearOptionChange={(value) => setSelectedYear(value)}
+          applyMaxWidth
         />
 
         <div className={styles.goButtonWrapper}>
           <button className={styles.goButton} onClick={handleClick}>
-            Go !!
+            {t?.groupPresidentDashboard?.dashboard?.goButtonText} !!
           </button>
         </div>
       </div>

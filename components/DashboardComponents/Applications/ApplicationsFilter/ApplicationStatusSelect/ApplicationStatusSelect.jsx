@@ -5,13 +5,14 @@ import styles from "../../../../../styles/Applications.module.css";
 // Application status dropdown filter component
 const ApplicationStatusSelect = (props) => {
   return (
-    (
-      props.selectedYear === (new Date().getFullYear()).toString() ||
-      props.selectedYear.toLowerCase()=="all"
-    ) && (
-      <>
+    (props.selectedYear === new Date().getFullYear().toString() ||
+      props.selectedYear.toLowerCase() == "all") && (
+      <div className={styles.applicationStatusFilterContainer}>
         <span className={`${styles.applicationFilterText} ${styles.margin}`}>
-          that are
+          {
+            props?.t?.adminDashboard?.receivedApplications
+              ?.applicationFilterText2
+          }
         </span>
 
         <div
@@ -47,7 +48,7 @@ const ApplicationStatusSelect = (props) => {
             </div>
           )}
         </div>
-      </>
+      </div>
     )
   );
 };

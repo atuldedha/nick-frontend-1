@@ -8,9 +8,18 @@ import VolunteersList from "./VolunteersList/VolunteersList";
 import VolunteersListHeader from "./VolunteersListHeader/VolunteersListHeader";
 import VolunteersSearch from "./VolunteersSearch/VolunteersSearch";
 import VolunteerContext from "../../../context/VolunteersContext";
+import { useRouter } from "next/router";
+import fr from "../../../locales/fr";
+import en from "../../../locales/en";
 // Volunteers tab component i.e (sidebar option selected === 5)
 
 const Volunteers = () => {
+  // router for language
+  const router = useRouter();
+  const { locale } = router;
+
+  const t = locale === "en-US" ? en : fr;
+
   const [openAddVolunteerModal, setOpenAddVolunteerModal] = useState(false);
   const { volunteers, setVolunteers, refetchVolunteers, loading } =
     useContext(VolunteerContext);
@@ -21,7 +30,9 @@ const Volunteers = () => {
   return (
     <>
       <div className={styles.container}>
-        <span className={styles.heading}>Volunteers List</span>
+        <span className={styles.heading}>
+          {t?.adminDashboard?.volunteersList?.headerText}
+        </span>
         {/*search common component */}
         <div className={styles.filterContainer}>
           <VolunteersSearch
@@ -34,7 +45,7 @@ const Volunteers = () => {
           <div className={styles.volunteersList}>
             <div className={styles.volunteersListHeader}>
               {/* volunteer listing header */}
-              <VolunteersListHeader />
+              <VolunteersListHeader t={t} />
             </div>
             {/* volunteers list */}
             <VolunteersList

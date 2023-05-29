@@ -4,6 +4,9 @@ import styles from "../../../../styles/ViewApplicationModal.module.css";
 import ApplicationForm from "./ApplicationForm/ApplicationForm";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { useRouter } from "next/router";
+import fr from "../../../../locales/fr";
+import en from "../../../../locales/en";
 
 //View Application Modal component
 const ViewApplicationModal = ({
@@ -13,6 +16,12 @@ const ViewApplicationModal = ({
   openAcceptModal,
   noButtons,
 }) => {
+  // router for language
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
+
   const applicationRef = useRef();
 
   const handleExportPdf = () => {
@@ -64,7 +73,7 @@ const ViewApplicationModal = ({
             />
           </div>
           <span className={styles.modalHeaderText}>
-            Received Application Form
+            {t?.readApplicationModal?.headetText}
           </span>
           <div className={styles.closeDeleteModalImage}>
             <Image
@@ -85,6 +94,7 @@ const ViewApplicationModal = ({
             openAcceptModal={openAcceptModal}
             closeModal={closeModal}
             noButtons={noButtons}
+            t={t}
           />
         </div>
       </div>

@@ -7,8 +7,17 @@ import ChangeContactModal from "../Modals/GroupPresidentDashboardModals/UserSett
 import ChangeSucessfullModal from "../Modals/GroupPresidentDashboardModals/UserSettingsModals/ChangeSucessfullModal/ChangeSucessfullModal";
 import AuthContext from "../../../context/AuthContext";
 import axios from "axios";
+import { useRouter } from "next/router";
+import fr from "../../../locales/fr";
+import en from "../../../locales/en";
 
 const UserSettings = ({ isPresident }) => {
+  // router for language
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
+
   const [openChangeInfoModal, setOpenChangeInfoModal] = useState(false);
   const [openDeleteAccountModal, setOpenDeleteAccountModal] = useState(false);
   const [openChangeContactModal, setOpenChangeContactModal] = useState(false);
@@ -33,7 +42,11 @@ const UserSettings = ({ isPresident }) => {
     <>
       <div className={styles.UserSettingsContainer}>
         <h1 className={styles.headerTitle}>
-          {contactChanged ? "Secondary Contact" : "Primary Contact"}
+          {contactChanged
+            ? t?.groupPresidentDashboard?.userSettings
+                ?.secondaryContactHeaderText
+            : t?.groupPresidentDashboard?.userSettings
+                ?.primaryContactHeaderText}
         </h1>
         {/* button container */}
         {isPresident ? (
@@ -42,7 +55,7 @@ const UserSettings = ({ isPresident }) => {
               className={styles.UserSettingsButton}
               onClick={() => setOpenChangeInfoModal(true)}
             >
-              Change Your Information
+              {t?.groupPresidentDashboard?.userSettings?.button1Text}
             </button>
             <button
               className={`${
@@ -52,13 +65,13 @@ const UserSettings = ({ isPresident }) => {
               }`}
               onClick={() => setOpenChangeContactModal(true)}
             >
-              Make secondary contact primary contact
+              {t?.groupPresidentDashboard?.userSettings?.button2Text}
             </button>
             <button
               className={styles.UserSettingsButton}
               onClick={() => setOpenDeleteAccountModal(true)}
             >
-              Delete Your Account
+              {t?.groupPresidentDashboard?.userSettings?.button3Text}
             </button>
           </div>
         ) : (
@@ -67,13 +80,13 @@ const UserSettings = ({ isPresident }) => {
               className={styles.UserSettingsButton}
               onClick={() => setOpenChangeInfoModal(true)}
             >
-              Change Your Information
+              {t?.groupPresidentDashboard?.userSettings?.button1Text}
             </button>
             <button
               className={styles.UserSettingsButton}
               onClick={() => setOpenDeleteAccountModal(true)}
             >
-              Delete Your Account
+              {t?.groupPresidentDashboard?.userSettings?.button3Text}
             </button>
           </div>
         )}
@@ -87,6 +100,7 @@ const UserSettings = ({ isPresident }) => {
             email: user && user.email,
             phone: user && user.phoneNumber,
           }}
+          t={t}
         />
       )}
       {/* Delete Account Modal */}
@@ -98,6 +112,7 @@ const UserSettings = ({ isPresident }) => {
             email: secretary?.email,
             phone: secretary?.phoneNumber,
           }}
+          t={t}
         />
       )}
       {/* Change Contact Modal */}
@@ -114,6 +129,7 @@ const UserSettings = ({ isPresident }) => {
             email: "JohnDav12@gmail.com",
             phone: "12354493033030",
           }}
+          t={t}
         />
       )}
       {/* Change Sucessfull Modal */}

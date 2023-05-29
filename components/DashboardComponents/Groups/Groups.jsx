@@ -31,7 +31,9 @@ const Groups = () => {
   return (
     <>
       <div className={styles.container}>
-        <span className={styles.heading}>Group List</span>
+        <span className={styles.heading}>
+          {t?.adminDashboard?.groupList?.headerText}
+        </span>
         <div className={styles.filterContainer}>
           {/* <Filter
             buttonText="+ Add Group"
@@ -44,7 +46,7 @@ const Groups = () => {
         <div className={styles.groupsListEmailWrapper}>
           <div className={styles.groupList}>
             <div className={styles.groupsListHeader}>
-              <IndiSendGroup showPhone />
+              <IndiSendGroup showPhone t={t} />
             </div>
             <GroupsList data={groups} setData={setGroups} />
           </div>

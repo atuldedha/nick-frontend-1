@@ -6,8 +6,16 @@ import ForwardIcon from "../../../public/forwardWhite.png";
 import DeleteIcon from "../../../public/deleteWhite.png";
 import SendMailModal from "./SendMailModal";
 import { useMail } from "../../../context/MailContext";
+import en from "../../../locales/en";
+import fr from "../../../locales/fr";
+import { useRouter } from "next/router";
 // modal for reading mail
 const ReadEmailModal = ({ data, closeModal, mailType }) => {
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
+
   const { deleteEmails } = useMail();
 
   const [messageType, setMessageType] = useState("TEXT");
@@ -35,7 +43,9 @@ const ReadEmailModal = ({ data, closeModal, mailType }) => {
         <div className={styles.container}>
           <div className={styles.modalContainer}>
             <div className={styles.modalHeader}>
-              <span className={styles.headerText}>Read Message</span>
+              <span className={styles.headerText}>
+                {t?.readMailModal?.headerText}
+              </span>
               <span
                 className={`${styles.headerText} ${styles.closeImage}`}
                 onClick={closeModal}
@@ -45,7 +55,7 @@ const ReadEmailModal = ({ data, closeModal, mailType }) => {
             </div>
             {/* subject */}
             <span className={styles.subjectText}>
-              Subject: {data?.subject}{" "}
+              {t?.readMailModal?.subjectText}: {data?.subject}{" "}
             </span>
             <div className={styles.divider} />
 
@@ -111,7 +121,7 @@ const ReadEmailModal = ({ data, closeModal, mailType }) => {
                   setOpenSendModal(true);
                 }}
               >
-                <span>Forward</span>
+                <span>{t?.readMailModal?.forwardText}</span>
                 <div className={styles.forwardImage}>
                   <Image
                     src={ForwardIcon}
@@ -133,10 +143,10 @@ const ReadEmailModal = ({ data, closeModal, mailType }) => {
                   }}
                 >
                   {mailType == "RECEIVED"
-                    ? "Reply"
+                    ? t?.readMailModal?.replyText
                     : status
                     ? status
-                    : "Delete"}
+                    : t?.readMailModal?.deleteText}
                 </span>
                 {mailType != "RECEIVED" && (
                   <div className={styles.deleteImage}>

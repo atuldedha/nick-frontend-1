@@ -2,15 +2,19 @@ import React from "react";
 import styles from "../../../../styles/MailsList.module.css";
 
 // table header for group option
-const VolunteersListHeader = () => {
+const VolunteersListHeader = ({ t }) => {
   return (
     <>
-      <div className={styles.bigCheckboxContainer} />
+      <div className={`${styles.bigCheckboxContainer} ${styles.widthLimit}`} />
 
-      <span className={`${styles.status} ${styles.groupName}`}>Person</span>
-      <span className={`${styles.status}`}>Email</span>
+      <span className={`${styles.status} ${styles.groupName}`}>
+        {t?.adminDashboard?.tableHeader?.personHeaderText}
+      </span>
+      <span className={`${styles.status}`}>
+        {t?.adminDashboard?.tableHeader?.emailHeaderText}
+      </span>
       <span className={`${styles.status} ${styles.volunteersPhone}`}>
-        Phone
+        {t?.adminDashboard?.tableHeader?.phoneHeaderText}
       </span>
     </>
   );

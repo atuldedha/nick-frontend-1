@@ -13,6 +13,7 @@ export default function Home() {
   const { locale } = router;
 
   const t = locale === "en-US" ? en : fr;
+
   return (
     <div>
       <Head>

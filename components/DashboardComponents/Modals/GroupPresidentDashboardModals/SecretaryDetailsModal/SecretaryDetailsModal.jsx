@@ -4,7 +4,7 @@ import ApplicationInput from "../../ViewApplicationModal/ApplicationForm/Applica
 import styles from "../../../../../styles/AddVolunteerModal.module.css";
 
 // Secretary Details modal component
-const SecretaryDetailsModal = ({ formData, closeModal }) => {
+const SecretaryDetailsModal = ({ formData, closeModal, t }) => {
   return (
     <div className={styles.container}>
       <div className={styles.modalContainer}>
@@ -18,8 +18,10 @@ const SecretaryDetailsModal = ({ formData, closeModal }) => {
             onClick={closeModal}
           />
         </div>
-        <span className={styles.headerText}>Secretary Details</span>
-        <div className={styles.formContainer} style={{paddingBottom: "5rem"}}>
+        <span className={styles.headerText}>
+          {t?.groupPresidentDashboard?.dashboard?.secretaryDetailsText}:
+        </span>
+        <div className={styles.formContainer} style={{ paddingBottom: "5rem" }}>
           <div className={styles.inputContainer}>
             {/* custom input component */}
             <ApplicationInput

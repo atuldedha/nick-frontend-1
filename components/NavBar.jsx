@@ -14,12 +14,10 @@ function NavBar() {
   const router = useRouter();
   const { locale } = router;
   const [width, height] = useWindowSize();
-  
-  const {token, user} = useContext(AuthContext);
+
+  const { token, user } = useContext(AuthContext);
 
   const [openMenu, setOpenMenu] = useState(false);
-
- 
 
   useEffect(() => {
     if (width > parseFloat("1200")) {
@@ -76,19 +74,17 @@ function NavBar() {
             >
               {locale === "en-US" ? (
                 <Image
-                  src="https://freesvg.org/img/frenchflagframed.png"
+                  src="/frenchflag.png"
                   alt="flag"
-                  width={20}
-                  height={10}
-                  objectFit="cover"
+                  width="20px"
+                  height="10px"
                 />
               ) : (
                 <Image
-                  src="https://freesvg.org/img/tobias-Flag-of-the-United-Kingdom.png"
+                  src="/ukflag.png"
                   alt="flag"
-                  width={20}
-                  height={10}
-                  objectFit="cover"
+                  width="20px"
+                  height="10px"
                 />
               )}
             </div>
@@ -105,7 +101,7 @@ function NavBar() {
           <Link href="/contact">
             <a>{t.nav.contact}</a>
           </Link>
-          {user &&(
+          {user && (
             <Link href="/dashboard">
               <a>{t.nav.dashboard}</a>
             </Link>
@@ -121,7 +117,11 @@ function NavBar() {
         </div>
       ) : width < parseFloat("1200") && width >= parseFloat("768") ? (
         <>
-          <div className={styles.tabletMenu}>
+          <div
+            className={`${styles.tabletMenu}
+          ${router.pathname === "/signin" ? styles.justifyStart : ""}
+          `}
+          >
             <div
               className={styles.flagTab}
               onClick={() =>
@@ -142,7 +142,7 @@ function NavBar() {
               >
                 {locale === "en-US" ? (
                   <Image
-                    src="https://freesvg.org/img/frenchflagframed.png"
+                    src="/frenchflag.png"
                     alt="flag"
                     width="20x"
                     height="20px"
@@ -150,7 +150,7 @@ function NavBar() {
                   />
                 ) : (
                   <Image
-                    src="https://freesvg.org/img/tobias-Flag-of-the-United-Kingdom.png"
+                    src="/ukflag.png"
                     alt="flag"
                     width="20px"
                     height="20px"
@@ -192,7 +192,11 @@ function NavBar() {
         </>
       ) : (
         <>
-          <div className={styles.mobileView}>
+          <div
+            className={`${styles.mobileView} ${
+              router.pathname === "/signin" ? styles.justifyStart : ""
+            }`}
+          >
             <div
               className={styles.blackMenu}
               onClick={() => {

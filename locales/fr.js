@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 // French translation for public site
 
 import { paradeYear } from "../components/untilLib/ParadeYear";
@@ -10,7 +11,7 @@ export default {
     history: "Histoire",
     contact: "Contactez-Nous",
     signIn: "Se Connecter",
-    dashboard: "Tableau de bord"
+    dashboard: "Tableau de bord",
   },
   hero: {
     title: "Défilé de la Fête du Canada à Montréal",
@@ -183,5 +184,309 @@ export default {
   //message shown when email has sent
   thankYouContact: {
     title: "Votre Email a été envoyé.",
+  },
+
+  // login page
+  login: {
+    loginText: "Se Connecter",
+    emailText: "Courriel",
+    passwordText: "Mot de Passe",
+    signInText: "Se Connecter",
+    loadingText: "En Cours de Chargement",
+  },
+
+  signupModal: {
+    volunteerSignupTitle: "S’inscrire comme Bénévole",
+    groupSignupTitle: "S’inscrire comme Groupe",
+    contact1: "Contact 1",
+    contact2: "Contact 2",
+    form: {
+      groupName: "Nom du Groupe",
+      firstName: "Prénom",
+      lastName: "Nom de Famille",
+      phoneNumber: "Téléphone",
+      email: "Courriel",
+      password: "Mot de Passe",
+      confirmPassword: "Confirmer Mot de Passe",
+      role: "Rôle",
+      countryRepresentation: "Pays de Représentation",
+    },
+    countryRepresentative: "Représentant de Pays",
+    loading: "En Cours de Chargement",
+    register: "S’inscrire",
+  },
+  // for admin dashboard
+  adminDashboard: {
+    // sidebar
+    sidebar: [
+      {
+        text: "Courriel",
+      },
+      {
+        text: "Système de Talkie-walkie",
+      },
+      {
+        text: "Demandes Reçues",
+      },
+      {
+        text: "Liste de Groupes",
+      },
+      {
+        text: "Liste de Bénévoles",
+      },
+    ],
+    // email section
+    emailSection: {
+      createEmailButtonText: "Créer un courriel",
+      backButtonText: "Retour",
+      goButtonText: "Aller",
+      creatingMailText1: "Je veux envoyer un",
+      creatingMailText2: "courriel à",
+      individual: "Individuel",
+      mass: "Masse",
+      sentEmailText: "Courriels Envoyés",
+      receivedEmailText: "Courriels Reçus",
+      individualOptions: {
+        individualOption1: "À quelqu’un ne figurant sur aucune liste actuelle",
+        individualOption2: "Un groupe spécifique",
+        individualOption3: "Un volontaire spécifique",
+      },
+      massOptions: {
+        massOption1: "Tout le monde sur la liste du groupe",
+        massOption2: "Tout le monde sur la liste des bénévoles",
+        massOption3: "Groupes inscrits présents au défilé de cette année",
+        massOption4: "Bénévoles inscrits présents au défilé de cette année",
+      },
+    },
+    // walkie talkie
+    walkieTalkie: {
+      sidebarText: "Système de Talkie-walkie",
+      usersText: "Utilisateurs",
+      walkieTalkieText: "Talkie-walkie",
+      containerInactiveButtonText: "Appuyer / Maintenir pour parler",
+      containerActiveButtonText: "Parle",
+      membersText: "Membres",
+      statusText: "Statut",
+    },
+    // received applications
+    receivedApplications: {
+      headerText: "Demandes",
+      applicationFilterText1: "Je veux voir les demandes de groupes pour",
+      applicationFilterText2: "qui sont",
+      applicationFilterOptions: {
+        applicationFilterOption1: "à être accepté",
+        applicationFilterOption2: "Accepté",
+      },
+    },
+    // group list
+    groupList: {
+      headerText: "Liste de Groupes",
+      addGroupText: "Ajouter un Groupe",
+    },
+    // volunteers list
+    volunteersList: {
+      headerText: "Liste de Bénévoles",
+      addVolunteerText: "Ajouter un Bénévole",
+    },
+    // search bar
+    searchBar: {
+      searchButtonText: "Rechercher",
+      groupPlaceholderText:
+        "Rechercher par nom du groupe, nom de la personne, courriel, téléphone",
+      volunteerPlaceholderText:
+        "Rechercher par nom du bénévole, courriel, téléphone",
+      receivedApplicationsPlaceholderText:
+        "Rechercher par demandes acceptées, rejetées, ou besoin d’approbation",
+    },
+    // table header texts
+    tableHeader: {
+      personHeaderText: "Personne",
+      groupNameHeaderText: "Nom du Groupe",
+      emailHeaderText: "Courriel",
+      countryHeaderText: "Pays",
+      titleHeaderText: "Titre",
+      statusHeaderText: "Statut",
+      volunteerNameHeaderText: "Nom du Bénévole",
+      phoneHeaderText: "Téléphone",
+    },
+  },
+  // logout text
+  logoutText: "Se Déconnecter",
+  // for group president dashboard
+  groupPresidentDashboard: {
+    sidebar: [{ text: "Tableau de Bord" }, { text: "Paramètres Utilisateur" }],
+    dashboard: {
+      previousApplicationsText: "Demandes Précédantes",
+      filterText: "Je veux voir les demandes de groupes pour",
+      goButtonText: "Aller",
+      contactInformationText: "Coordonnées",
+      contactSecretaryButtonText: "Contacter le Secrétariat",
+      applicationStatusText: "Statut de la Demande",
+      currentApplicationStatusText: "Statut de la Demande Actuelle",
+      secretaryDetailsText: "Coordonnées du Secrétariat",
+    },
+    noApplicationFoundText: "Aucune Demande Trouvée pour cette année.",
+    userSettings: {
+      primaryContactHeaderText: "Premier Contact",
+      secondaryContactHeaderText: "Contact Secondaire",
+      button1Text: "Modifier Vos Informations",
+      button2Text: "Rendre le contact secondaire le premier",
+      button3Text: "Supprimer Votre Compte",
+    },
+  },
+  // delete modal
+  deleteModal: {
+    text: "Êtes-vous sûrs de vouloir supprimer",
+    boldText: "TOUT",
+    selectedText: "sélectionné",
+    deletingText: "En train de supprimer…",
+    noButtonText: "Non",
+    yesButtonText: "Oui",
+  },
+  // read mail modal
+  readMailModal: {
+    headerText: "Lire le Message",
+    subjectText: "Sujet",
+    forwardText: "Transmettre",
+    replyText: "Répondre",
+    deleteText: "Supprimer",
+  },
+  // send mail modal
+  sendMailModal: {
+    newMessageText: "Nouveau Message",
+    replyText: "Répondre",
+    forwardText: "Transmettre",
+    subjectText: "Sujet",
+    toText: "À",
+    attachFileText: "Attacher un Fichier",
+    sendText: "Envoyer",
+    sendingText: "En cours d’envoi…",
+    errorText: "Erreur",
+  },
+  // read group application modal
+  readApplicationModal: {
+    headerText: "Formulaire de Demande Reçu",
+    organizationNameText: "Nom de l’Organisation",
+    groupPresidentText: "Président du Groupe",
+    emailText: "Courriel",
+    phoneText: "Téléphone",
+    representCountryText: "Représenter n’importe quel pays",
+    whichCountryText: "Quel Pays",
+    question1: " Votre groupe aura-t-il des marcheurs?",
+    question1A: "Combien de personnes marcheront dans votre groupe?",
+    question2: "Amènerez-vous des voitures?",
+    question2A:
+      "Combien de voitures (Toute voiture doit être décorée et toute voiture non décorée sera retirée du défilé)?",
+    question3: "Amènerez-vous des VUS?",
+    question3A: "Combien de VUS?",
+    question4: "Amènerez-vous des Pick-up?",
+    question4A: "Combien?",
+    question4B: "Quelle marque / modèle?",
+    question5:
+      "Amènerez-vous des remorques attachées à votre VUS, Voiture ou Pick-up?",
+    question5A: `Quelle est la longueur totale en pieds de l’avant de la voiture à l’extrémité de la remorques (Arrondir au pied le plus proche, Veuillez noter que nous avons une limite maximale de 28 pieds)?`,
+    question6: "Amènerez-vous des flotteurs?",
+    question6A:
+      "Quelle est la longueur du flotteur en pieds (limite maximale de la longueur de 28 pieds)?",
+    question6B: "Avez-vous un extincteur dans le flotteur (obligatoire)?",
+    question7: "Amènerez-vous des animaux?",
+    question7A: "Amènerez-vous des chevaux?",
+    question7A1:
+      "Vous devrez fournir un certificat d’assurance au défilé Sont-ils assurés?",
+    question7A2: "Combien allez-vous en amener?",
+    question7B: "Amènerez-vous des chiens?",
+    question7B1: "Combien de chiens?",
+    question7C: "Amènerez-vous d’autres animaux?",
+    question7C1: "Indiquer le nombre et l’espèce?",
+    rejectText: "Rejeter",
+    cancelText: "Annuler",
+    editText: "Modifier",
+    acceptText: "Accepter",
+    saveText: "Sauvegarder",
+  },
+  // edit group application modal
+  // used same for edit volunteer
+  editGroupModal: {
+    // for group
+    headerText: "Modifier Groupe",
+    selectContactText: "Veuillez sélectionner le premier contact",
+    contact1Text: "Contact 1",
+    contact2Text: "Contact 2",
+    changeText: "changer",
+    cancelText: "annuler",
+    resetPasswordText: "Modifier le Mot de Passe",
+    representingCountryText: "Représentez-vous un pays?",
+    saveText: "Sauvegarder",
+    savingText: "En cours de sauvegarde…",
+    // for volunteer
+    volunteerHeaderText: "Modifier le Bénévole",
+  },
+  // change volunteer info modal
+  changeVolunteerInformationModal: {
+    headerText: "Modifier l’Information",
+    changeText: "modifier",
+    cancelText: "annuler",
+    resetPasswordText: "Modifier le Mot de Passe",
+    saveText: "Sauvegarder",
+    savingText: "En cours de sauvegarde…",
+  },
+  // delete volunteer modal
+  deleteVolunteerModal: {
+    text: " Veuillez contacter votre secrétariat pour supprimer votre compte",
+  },
+  // vip page
+  vipInvite: {
+    montrealParadeText: "Défilé de la Fête du Canada 2023",
+    vipInviteText: "Invitation VIP",
+    vipForm: {
+      vipNameText: "Nom du VIP",
+      phoneText: "Numéro de Téléphone",
+      emailText: "Courriel",
+      organizationNameText: "Nom de l’Organisation",
+      roleInOrganizationText: "Votre Rôle dans l’Organisation",
+      bringSomeoneText: "Souhaitez-vous emmener quelqu’un d’autre avec vous?",
+      submitText: "Soumettre",
+      mailSentText: "Demande VIP Envoyée",
+    },
+  },
+  // volunteer position modal
+  volunteerPositionModal: {
+    headerText:
+      "Veuillez sélectionner la/les position(s) que vous souhaiteriez?",
+    positions: [
+      "Contrôleur de ligne sénior",
+      "Contrôleur de ligne junior",
+      "Bénévole route du défilé",
+      "Bénévole de l’espace gâteau",
+      "Bénévole de l’espace eau",
+      "Bénévole général",
+      "Bénévole scène VIP",
+    ],
+    mailSentText:
+      "Bienvenu au défilé de cette année. Vous serez contactés bientôt.",
+    cancelText: "Annuler",
+    applyText: "Postuler",
+  },
+
+  // add volunteer modal
+  addVolunteer: {
+    addVolunteerText: "Ajouter un bénévole",
+    firstNameText: "Prénom",
+    lastNameText: "Nom de Famille",
+    emailText: "Courriel",
+    phoneNumberText: "Téléphone",
+    addingText: "Ajouter...",
+    addText: "Ajouter",
+  },
+
+  // change contact modal
+  changeContactModal: {
+    headerText1: "Voulez-vous vraiment définir le numéro de",
+    headerText2: "Contact 2 comme contact principal?",
+    personText: "Personne",
+    emailText: "Courriel",
+    phoneText: "Téléphone",
+    yesText: "Yes",
+    noText: "No",
   },
 };

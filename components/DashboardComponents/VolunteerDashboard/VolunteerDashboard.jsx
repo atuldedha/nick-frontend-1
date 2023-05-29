@@ -6,7 +6,15 @@ import PreviousApplications from "../GroupPresidentDashboard/PreviousApplication
 import styles from "../../../styles/GroupPresidentDashboard.module.css";
 import VolunteerButton from "./VolunteerButton/VolunteerButton";
 import AuthContext from "../../../context/AuthContext";
+import { useRouter } from "next/router";
+import fr from "../../../locales/fr";
+import en from "../../../locales/en";
 const VolunteerDashboard = () => {
+  // router for language
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
   // state to open previous application modal
   const [openPreviousApplicationModal, setOpenPreviousApplicationModal] =
     useState(false);
@@ -35,7 +43,8 @@ const VolunteerDashboard = () => {
           <PreviousApplications
             selectedYear={selectedYear}
             setSelectedYear={setSelectedYear}
-            setOpenPreviousApplicationModal={setOpenPreviousApplicationModal}
+            handleClick={setOpenPreviousApplicationModal}
+            t={t}
           />
           <div className={styles.divider} />
         </div>
@@ -50,7 +59,11 @@ const VolunteerDashboard = () => {
       )}
       {/* position application modal */}
       {openPositionModal && (
-        <PositionModal closeModal={() => setOpenPositionModal(false)} />
+        <PositionModal
+          user={user}
+          closeModal={() => setOpenPositionModal(false)}
+          t={t}
+        />
       )}
     </>
   );

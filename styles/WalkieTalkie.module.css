@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  /* justify-content: center; */
   width: 100%;
   height: 100vh;
   padding: 4em 2em;
@@ -32,6 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2em;
 }
 
 .headingText {
@@ -82,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 190px;
+  width: 250px;
   height: 200px;
   margin-top: 2em;
   position: relative;
@@ -103,14 +105,15 @@
   justify-content: center;
   border-radius: 500px;
   width: 100%;
-  padding: 4em 0;
+  text-align: center;
+  padding: 6em 0;
   border: none;
   background-color: var(--primary);
   color: white;
   font-family: "Poppins", sans-serif;
   font-size: var(--font-normal);
   font-weight: 600;
-  line-height: 2.25em;
+  line-height: 1em;
   transition: all 0.5s ease-in-out;
 }
 
@@ -249,7 +252,7 @@
   }
   .rounded {
     font-size: var(--font-lg);
-    width: 19.0625em;
+    width: 18.0625em;
     padding: 8.4375em 0;
   }
   .usersContainer {

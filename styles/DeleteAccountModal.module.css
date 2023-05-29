@@ -134,9 +134,13 @@
   background: #eeeeee;
   border: 0.125em solid #000000;
   border-radius: 0.9375em;
-  width: 50em;
-  margin-left: 10vh;
+  max-width: 90%;
+  max-height: 90%;
+  min-height: 20%;
+  /* margin-left: 10vh; */
+  padding: 0 2em;
   position: relative;
+  overflow-y: auto;
 }
 
 /* CheckBox CSS  for Position Modal*/
@@ -191,7 +195,7 @@
 
 /* text */
 .positionText {
-  font-size: var(--font-lg);
+  font-size: var(--font-normal);
   padding-left: 35px;
 }
 /* Create a custom radio button */
@@ -238,6 +242,15 @@
   background: white;
 }
 
+.volunteerApplyMailSent {
+  padding: 0.75 0;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: 1.8125em;
+  margin-top: 3.5em;
+}
+
 @media screen and (min-width: 768px) {
   .modalContainer {
     margin-left: 10vh;
@@ -251,6 +264,10 @@
   }
   .SubmitButton,
   .CancelButton {
+    font-size: var(--font-lg);
+  }
+
+  .positionText {
     font-size: var(--font-lg);
   }
 }

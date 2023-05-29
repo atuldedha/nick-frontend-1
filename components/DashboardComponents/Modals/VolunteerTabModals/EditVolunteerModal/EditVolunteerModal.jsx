@@ -5,6 +5,9 @@ import VolunteerInputDropdown from "../../../Volunteers/VolunteerInputDropdown/V
 import ApplicationInput from "../../ViewApplicationModal/ApplicationForm/ApplicationInput/ApplicationInput";
 import AuthContext from "../../../../../context/AuthContext";
 import VolunteersContext from "../../../../../context/VolunteersContext";
+import { useRouter } from "next/router";
+import fr from "../../../../../locales/fr";
+import en from "../../../../../locales/en";
 // EditVolunteer Component to edit existing volunteer
 const dropdownValues = [
   {
@@ -17,6 +20,12 @@ const dropdownValues = [
   },
 ];
 const EditVolunteerModal = ({ closeModal, data, setData }) => {
+  // router for language selection
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
+
   const [walkieTalkieAccess, setWalkieTalkieAcess] = useState();
 
   //   editing state active or not for first name input
@@ -65,7 +74,9 @@ const EditVolunteerModal = ({ closeModal, data, setData }) => {
             onClick={closeModal}
           />
         </div>
-        <span className={styles.headerText}>Edit Volunteer</span>
+        <span className={styles.headerText}>
+          {t?.editGroupModal?.volunteerHeaderText}
+        </span>
 
         <div className={styles.flexRow}>
           {/* show cancel if editing state active */}
@@ -73,7 +84,9 @@ const EditVolunteerModal = ({ closeModal, data, setData }) => {
             className={styles.changeText}
             onClick={() => setFristNameEditable(!fisrtNameEditable)}
           >
-            {fisrtNameEditable ? "cancel" : "change"}
+            {fisrtNameEditable
+              ? t?.editGroupModal?.cancelText
+              : t?.editGroupModal?.changeText}
           </span>
           <div className={styles.inputCont}>
             {/* custom input component */}
@@ -92,7 +105,9 @@ const EditVolunteerModal = ({ closeModal, data, setData }) => {
             className={styles.changeText}
             onClick={() => setLastNameEditable(!lastNameEditable)}
           >
-            {lastNameEditable ? "cancel" : "change"}
+            {lastNameEditable
+              ? t?.editGroupModal?.cancelText
+              : t?.editGroupModal?.changeText}
           </span>
           <div className={styles.inputCont}>
             {/* custom input component */}
@@ -129,7 +144,9 @@ const EditVolunteerModal = ({ closeModal, data, setData }) => {
             className={styles.changeText}
             onClick={() => setEmailEditable(!emailEditable)}
           >
-            {emailEditable ? "cancel" : "change"}
+            {emailEditable
+              ? t?.editGroupModal?.cancelText
+              : t?.editGroupModal?.changeText}
           </span>
           <div className={styles.inputCont}>
             {/* custom input component */}
@@ -147,7 +164,9 @@ const EditVolunteerModal = ({ closeModal, data, setData }) => {
             className={styles.changeText}
             onClick={() => setPhoneEditable(!phoneEditable)}
           >
-            {phoneEditable ? "cancel" : "change"}
+            {phoneEditable
+              ? t?.editGroupModal?.cancelText
+              : t?.editGroupModal?.changeText}
           </span>
           <div className={styles.inputCont}>
             {/* custom input component */}
@@ -173,7 +192,9 @@ const EditVolunteerModal = ({ closeModal, data, setData }) => {
         </div>
         <div style={{ color: "red", fontSize: "1.5rem" }}>{error}</div>
         <button className={`${styles.inputCont} ${styles.addButton}`}>
-          {loading ? "Saving..." : "Save"}
+          {loading
+            ? t?.editGroupModal?.savingText
+            : t?.editGroupModal?.saveText}
         </button>
       </form>
     </div>

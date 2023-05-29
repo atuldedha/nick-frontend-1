@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../../../styles/WalkieTalkie.module.css";
 
 // Walkie Talkie component
-const WalkieTalkieBody = ({ talking, setTalking }) => {
+const WalkieTalkieBody = ({ talking, setTalking, t }) => {
   return (
     <div className={styles.mainSection}>
       <div
@@ -10,7 +10,9 @@ const WalkieTalkieBody = ({ talking, setTalking }) => {
         onMouseDown={() => setTalking(true)}
         onMouseUp={() => setTalking(false)}
       >
-        {talking ? "Talking" : "Press / Hold to talk"}
+        {talking
+          ? t?.adminDashboard?.walkieTalkie?.containerActiveButtonText
+          : t?.adminDashboard?.walkieTalkie?.containerInactiveButtonText}
       </div>
     </div>
   );

@@ -15,6 +15,39 @@ const AudienceSelection = ({
     audienceMassOption,
     handleMassSenderSelection,
   } = useMail();
+
+  const translateSelectedOption = () => {
+    let translatedOption;
+    if (senderOption === "Individual") {
+      translatedOption =
+        audienceOption === "To someone not on any current list"
+          ? t?.adminDashboard?.emailSection?.individualOptions
+              ?.individualOption1
+          : audienceOption === "A specific group"
+          ? t?.adminDashboard?.emailSection?.individualOptions
+              ?.individualOption2
+          : audienceOption === "A specific volunteer"
+          ? t?.adminDashboard?.emailSection?.individualOptions
+              ?.individualOption3
+          : "";
+    } else {
+      translatedOption =
+        audienceMassOption === "Everyone on the group list"
+          ? t?.adminDashboard?.emailSection?.massOptions?.massOption1
+          : audienceMassOption === "Everyone on the volunteer list"
+          ? t?.adminDashboard?.emailSection?.massOptions?.massOption2
+          : audienceMassOption ===
+            "Groups registered coming to this year’s parade"
+          ? t?.adminDashboard?.emailSection?.massOptions?.massOption3
+          : audienceMassOption ===
+            "Volunteers registered coming to this year’s parade"
+          ? t?.adminDashboard?.emailSection?.massOptions?.massOption4
+          : "";
+    }
+
+    return translatedOption;
+  };
+
   return (
     <div className={styles.audienceOptionsContainer}>
       <span className={`${styles.senderText} ${styles.senderText2}`}>
@@ -27,9 +60,7 @@ const AudienceSelection = ({
       >
         <div className={styles.audienceInputValue}>
           <span className={styles.selectedOption}>
-            {senderOption === "Individual"
-              ? audienceOption
-              : audienceMassOption}
+            {translateSelectedOption()}
           </span>
           <Image
             src="/chevDown.png"

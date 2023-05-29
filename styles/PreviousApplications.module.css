@@ -16,6 +16,7 @@
 .applicationFilterLeft {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 0.8em;
   width: 100%;
 }
@@ -32,6 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .goButton {
@@ -67,7 +69,7 @@
   margin-left: 14px;
 }
 .paradeBlock {
-  padding: 40px 0;
+  padding: 2.5em 0;
   text-align: center;
   width: 100%;
   background: #d9d9d9;
@@ -91,11 +93,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .applicationFilterLeft {
-    flex-direction: row;
-    align-items: center;
-    margin-top: 1.875em;
-  }
   .title {
     font-size: var(--font-lg);
   }
@@ -103,15 +100,27 @@
     font-size: var(--font-normal);
     margin-bottom: 0;
   }
-  .goButton {
-    width: max-content !important;
-    font-size: var(--font-sm);
-    margin-left: 100px;
-  }
+
   .margin {
     margin-top: 1.375em;
   }
   .statusText {
     font-size: var(--font-sm);
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .goButtonWrapper {
+    width: max-content !important;
+  }
+  .goButton {
+    width: max-content !important;
+    font-size: var(--font-sm);
+    margin-left: 100px;
+  }
+  .applicationFilterLeft {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.875em;
   }
 }

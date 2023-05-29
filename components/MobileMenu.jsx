@@ -40,7 +40,7 @@ const MobileMenu = ({ t, locale, closeMenu }) => {
         >
           {locale === "en-US" ? (
             <Image
-              src="https://freesvg.org/img/frenchflagframed.png"
+              src="/frenchflag.png"
               alt="flag"
               width={20}
               height={10}
@@ -48,7 +48,7 @@ const MobileMenu = ({ t, locale, closeMenu }) => {
             />
           ) : (
             <Image
-              src="https://freesvg.org/img/tobias-Flag-of-the-United-Kingdom.png"
+              src="/ukflag.png"
               alt="flag"
               width={20}
               height={10}
@@ -77,7 +77,13 @@ const MobileMenu = ({ t, locale, closeMenu }) => {
           {t.nav.contact}
         </a>
       </Link>
-      {token ? "" : <button className={styles.button}>{t.nav.signIn}</button>}
+      {token ? (
+        ""
+      ) : (
+        <button className={styles.button} onClick={() => closeMenu()}>
+          <Link href="/signin">{t.nav.signIn}</Link>
+        </button>
+      )}
     </>
   );
 };

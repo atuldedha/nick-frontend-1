@@ -10,6 +10,7 @@ const ReceivedHeader = ({
   list,
   setList,
   openDeleteModal,
+  t,
 }) => {
   function checkAll() {
     setList(
@@ -21,7 +22,7 @@ const ReceivedHeader = ({
   }
   return (
     <>
-      <div className={styles.bigCheckboxContainer}>
+      <div className={`${styles.bigCheckboxContainer}  ${styles.widthLimit}`}>
         <div className={styles.bigCheckbox} onClick={checkAll}>
           {allMailsCheck && (
             <Image
@@ -35,8 +36,12 @@ const ReceivedHeader = ({
         </div>
       </div>
 
-      <span className={styles.person}>Person</span>
-      <span className={styles.status}>Email</span>
+      <span className={styles.person}>
+        {t?.adminDashboard?.tableHeader?.personHeaderText}
+      </span>
+      <span className={styles.status}>
+        {t?.adminDashboard?.tableHeader?.emailHeaderText}
+      </span>
       <div className={styles.headerDeleteIcon}>
         <Image
           src={DeleteIcon}

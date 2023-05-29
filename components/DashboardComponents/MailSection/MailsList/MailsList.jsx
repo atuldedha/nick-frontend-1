@@ -97,19 +97,20 @@ const MailsList = () => {
   const getMailButtonText = () => {
     const buttonText =
       mailButtonText === "Sent Emails"
-        ? t.adminDashboard.emailSection.sentEmailText
+        ? t?.adminDashboard?.emailSection?.sentEmailText
         : mailButtonText === "A specific group"
-        ? t.adminDashboard.emailSection.individualOptions.individualOption2
+        ? t?.adminDashboard?.emailSection?.individualOptions?.individualOption2
         : mailButtonText === "A specific volunteer"
-        ? t.adminDashboard.emailSection.individualOptions.individualOption3
+        ? t?.adminDashboard?.emailSection?.individualOptions?.individualOption3
         : mailButtonText === "Everyone on the group list"
-        ? t.adminDashboard.emailSection.massOptions.massOption1
+        ? t?.adminDashboard?.emailSection?.massOptions?.massOption1
         : mailButtonText === "Everyone on the volunteer list"
-        ? t.adminDashboard.emailSection.massOptions.massOption2
+        ? t?.adminDashboard?.emailSection?.massOptions?.massOption2
         : mailButtonText === "Groups registered coming to this year’s parade"
-        ? t.adminDashboard.emailSection.massOptions.massOption3
-        : mailButtonText === "Groups registered coming to this year’s parade"
-        ? t.adminDashboard.emailSection.massOptions.massOption4
+        ? t?.adminDashboard?.emailSection?.massOptions?.massOption3
+        : mailButtonText ===
+          "Volunteers registered coming to this year’s parade"
+        ? t?.adminDashboard?.emailSection?.massOptions?.massOption4
         : "";
     return buttonText;
   };
@@ -130,7 +131,6 @@ const MailsList = () => {
     },
     [isCreatingMail]
   );
-
   return (
     <>
       <div className={styles.container}>
@@ -139,7 +139,7 @@ const MailsList = () => {
             {/* button text based on the selection of the dropdowns */}
             {isCreatingMail
               ? getMailButtonText()
-              : t.adminDashboard.emailSection.receivedEmailText}
+              : t?.adminDashboard?.emailSection?.receivedEmailText}
           </button>
           {audienceOption === "A specific volunteer" ? (
             <VolunteersSearch />
@@ -158,21 +158,22 @@ const MailsList = () => {
                       openDeleteModal={openDeleteModal}
                       list={sentEmails}
                       setList={setSentEmails}
+                      t={t}
                     />
                   ) : audienceOption === "A specific group" ? (
-                    <IndiSendGroup />
+                    <IndiSendGroup t={t} />
                   ) : (
-                    <IndiSendVolunteer />
+                    <IndiSendVolunteer t={t} />
                   )
                 ) : senderOption === "Mass" ? (
                   audienceMassOption === "Everyone on the group list" ||
                   audienceMassOption ===
                     "Groups registered coming to this year’s parade" ? (
-                    <IndiSendGroup />
+                    <IndiSendGroup t={t} />
                   ) : audienceMassOption === "Everyone on the volunteer list" ||
                     audienceMassOption ===
                       "Volunteers registered coming to this year’s parade" ? (
-                    <MassVolunteer />
+                    <MassVolunteer t={t} />
                   ) : (
                     ""
                   )
@@ -186,6 +187,7 @@ const MailsList = () => {
                   openDeleteModal={openDeleteModal}
                   list={receivedEmails}
                   setList={setReceivedEmails}
+                  t={t}
                 />
               )}
             </div>

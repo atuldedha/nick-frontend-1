@@ -10,6 +10,15 @@ const SenderSelection = ({
   t,
 }) => {
   const { senderOption } = useMail();
+
+  const translateSelectedOption = () => {
+    const translatedOption =
+      senderOption === "Individual"
+        ? t?.adminDashboard?.emailSection?.individual
+        : t?.adminDashboard?.emailSection?.mass;
+
+    return translatedOption;
+  };
   return (
     <div className={styles.emailOptionsContainer}>
       <span className={styles.senderText}>
@@ -21,7 +30,9 @@ const SenderSelection = ({
         onClick={() => setSenderOptionsActive(!senderOptionsActive)}
       >
         <div className={styles.senderInputValue}>
-          <span className={styles.selectedOption}>{senderOption}</span>
+          <span className={styles.selectedOption}>
+            {translateSelectedOption()}
+          </span>
           <Image
             src="/chevDown.png"
             alt="down"

@@ -6,7 +6,9 @@ import styles from "../../../../../styles/Applications.module.css";
 const ApplicationYearSelect = (props) => {
   return (
     <div
-      className={styles.applicationFilterInputContainer}
+      className={`${styles.applicationFilterInputContainer} ${
+        props?.applyMaxWidth ? styles.applyMaxWidth : ""
+      }`}
       onClick={() => props.setYearOptionActive(!props.yearOptionActive)}
     >
       <div className={styles.applicationFilterInputValue}>

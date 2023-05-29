@@ -148,7 +148,7 @@
 .listContainer {
   width: 100%;
   overflow: scroll;
-  height: 18.75em;
+  height: 16.75em;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 .applicationList {
@@ -165,24 +165,27 @@
   display: none;
 }
 
+.applicationYearFilterContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.applicationStatusFilterContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (min-width: 768px) {
-  .applicationFilterContainer {
-    flex-direction: row !important;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.5em;
-    margin-bottom: 3.1875em;
-  }
   .applicationFilterText {
     font-size: var(--font-normal);
   }
   .applicationFilterLeft {
     flex-direction: row !important;
     align-items: center;
+    width: 100%;
+    gap: 0.625em;
   }
-  .applicationFilterInputContainer {
-    margin-left: 1.5em;
-  }
+
   .headerText {
     display: flex;
     align-items: center;
@@ -190,22 +193,75 @@
     font-size: var(--font-lg);
     margin-top: 3.1875em;
   }
-  .applicationFilterInputValue {
-    width: 12.5em;
-    padding: 0.625em;
-  }
+
   .applicationFilterInputOptions {
-    width: 12.5em;
-    top: 2.875em;
+    top: 2.4em;
   }
-  .goButton {
-    width: max-content !important;
-    margin-top: 0;
-  }
+
   .applicationList {
     width: 100%;
   }
   .filterContainer {
     margin-bottom: 1.875em;
+  }
+
+  .applicationStatusFilterContainer,
+  .applicationYearFilterContainer {
+    width: 50%;
+  }
+}
+
+.applyMaxWidth {
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .applyMaxWidth {
+    max-width: 18.75em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1350px) {
+  .applicationFilterContainer {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5em;
+    margin-bottom: 3.1875em;
+  }
+
+  .applicationFilterLeft {
+    gap: 0;
+  }
+
+  .applicationStatusFilterContainer,
+  .applicationYearFilterContainer {
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+  }
+  .applicationFilterInputContainer {
+    margin-left: 1.5em;
+  }
+
+  .applicationFilterInputValue {
+    width: 12.5em;
+    padding: 0.625em;
+  }
+
+  .goButton {
+    width: max-content !important;
+    margin-top: 0;
+  }
+
+  .applicationFilterInputOptions {
+    width: 12.5em;
+    top: 2.875em;
+  }
+  .applyMaxWidth {
+    width: auto !important;
   }
 }

@@ -10,9 +10,17 @@ import ApplicationsFilter from "./ApplicationsFilter/ApplicationsFilter";
 import ApplicationsList from "./ApplicationsList/ApplicationsList";
 import AuthContext from "../../../context/AuthContext";
 import axios from "axios";
+import fr from "../../../locales/fr";
+import en from "../../../locales/en";
+import { useRouter } from "next/router";
 
 // Applications Component i.e, "tabSelected === 3"
 const Applications = () => {
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
+
   // static data
   const [applications, setApplications] = useState();
   // year dropdown state
@@ -214,7 +222,9 @@ const Applications = () => {
   return (
     <>
       <div className={styles.container}>
-        <span className={styles.headerText}>Applications</span>
+        <span className={styles.headerText}>
+          {t?.adminDashboard?.receivedApplications?.headerText}
+        </span>
 
         {/* Application filter component */}
         <ApplicationsFilter
@@ -227,12 +237,15 @@ const Applications = () => {
           setStatusOptionActive={setStatusOptionActive}
           selectedStatus={selectedStatus}
           handleStatusOptionChange={handleStatusOptionChange}
+          t={t}
         />
         {/*Search common component */}
         <div className={styles.filterContainer}>
           <Filter
-            buttonText="Applications"
-            searchPlaceholder="Search by approved, rejected or need approval applications"
+            buttonText={t.adminDashboard.receivedApplications.headerText}
+            searchPlaceholder={
+              t?.adminDashboard?.searchBar?.receivedApplicationsPlaceholderText
+            }
             handleButtonClick={() => {}}
             setSearchData={setSearchData}
             handleClick={handleSearchClick}

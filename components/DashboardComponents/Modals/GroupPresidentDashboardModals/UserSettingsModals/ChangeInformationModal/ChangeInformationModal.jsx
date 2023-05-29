@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect, useContext } from "react";
 import styles from "../../../../../../styles/ChangeInformationModal.module.css";
 import AuthContext from "../../../../../../context/AuthContext";
-const ChangeInformationModal = ({ data, closeModal }) => {
+const ChangeInformationModal = ({ data, closeModal, t }) => {
   const [newData, setNewData] = useState(data);
   const [nameEditable, setNameEditable] = useState(false);
   //   editing state active or not for email input
@@ -24,13 +24,15 @@ const ChangeInformationModal = ({ data, closeModal }) => {
           <Image
             src="/closeRed.png"
             alt="cross"
-            height="34px"
-            width="34px"
+            height="28px"
+            width="28px"
             objectFit="contain"
             onClick={closeModal}
           />
         </div>
-        <span className={styles.headerText}>Change Information</span>
+        <span className={styles.headerText}>
+          {t?.changeVolunteerInformationModal?.headerText}
+        </span>
 
         <div className={styles.flexRow}>
           {/* show cancel if editing state active */}
@@ -38,7 +40,9 @@ const ChangeInformationModal = ({ data, closeModal }) => {
             className={styles.changeText}
             onClick={() => setNameEditable(!nameEditable)}
           >
-            {nameEditable ? "cancel" : "change"}
+            {nameEditable
+              ? t?.changeVolunteerInformationModal?.cancelText
+              : t?.changeVolunteerInformationModal?.changeText}
           </span>
           <div className={styles.inputCont}>
             {/* custom input component */}
@@ -57,7 +61,9 @@ const ChangeInformationModal = ({ data, closeModal }) => {
               className={styles.changeText}
               onClick={() => setEmailEditable(!emailEditable)}
             >
-              {emailEditable ? "cancel" : "change"}
+              {emailEditable
+                ? t?.changeVolunteerInformationModal?.cancelText
+                : t?.changeVolunteerInformationModal?.changeText}
             </span>
 
             <div className={styles.inputCont}>
@@ -78,7 +84,9 @@ const ChangeInformationModal = ({ data, closeModal }) => {
             className={styles.changeText}
             onClick={() => setPhoneEditable(!phoneEditable)}
           >
-            {phoneEditable ? "cancel" : "change"}
+            {phoneEditable
+              ? t?.changeVolunteerInformationModal?.cancelText
+              : t?.changeVolunteerInformationModal?.changeText}
           </span>
           <div className={styles.inputCont}>
             {/* custom input component */}
@@ -100,7 +108,9 @@ const ChangeInformationModal = ({ data, closeModal }) => {
             });
           }}
         >
-          {loading ? "Saving..." : "Save"}
+          {loading
+            ? t?.changeVolunteerInformationModal?.savingText
+            : t?.changeVolunteerInformationModal?.saveText}
         </button>
       </div>
     </div>

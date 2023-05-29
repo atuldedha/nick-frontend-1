@@ -14,6 +14,7 @@ const ApplicationForm = ({
   openAcceptModal,
   closeModal,
   noButtons,
+  t,
 }) => {
   // editable state
   const [isEditable, setIsEditable] = useState(false);
@@ -192,7 +193,9 @@ const ApplicationForm = ({
   return (
     <>
       <div className={styles.applicationForm}>
-        <span className={styles.formText}>Name of organization</span>
+        <span className={styles.formText}>
+          {t?.readApplicationModal?.organizationNameText}
+        </span>
         {/* custom component for input */}
         <ApplicationInput
           value={formData.orgName}
@@ -201,7 +204,9 @@ const ApplicationForm = ({
           handleChange={handleEdit}
         />
 
-        <span className={styles.formText}>Group President</span>
+        <span className={styles.formText}>
+          {t?.readApplicationModal?.groupPresidentText}
+        </span>
         {/* custom component for input */}
         <ApplicationInput
           value={formData.groupPresident}
@@ -212,7 +217,7 @@ const ApplicationForm = ({
 
         <div className={styles.gridCol2}>
           <div className={`${styles.flexColumn}`}>
-            <span>Email</span>
+            <span>{t?.readApplicationModal?.emailText}</span>
             {/* custom component for input */}
             <ApplicationInput
               value={formData.email}
@@ -222,7 +227,7 @@ const ApplicationForm = ({
             />
           </div>
           <div className={`${styles.flexColumn}`}>
-            <span>Phone</span>
+            <span>{t?.readApplicationModal?.phoneText}</span>
             {/* custom component for input */}
             <ApplicationInput
               value={formData.phone}
@@ -235,7 +240,7 @@ const ApplicationForm = ({
 
         <div className={`${styles.gridCol2} ${styles.transformGrid}`}>
           <div className={`${styles.flexColumn}`}>
-            <span>Represent any country</span>
+            <span>{t?.readApplicationModal?.representCountryText}</span>
             {/* custom component for checkboxes */}
             <ApplicationCheckboxes
               yesChecked={formData.representingCountry}
@@ -251,7 +256,7 @@ const ApplicationForm = ({
           </div>
           {formData.representingCountry && (
             <div className={`${styles.flexColumn}`}>
-              <span>Which Country</span>
+              <span>{t?.readApplicationModal?.whichCountryText}</span>
               {/* custom component for input */}
               <ApplicationInput
                 value={formData.countryName}
@@ -282,6 +287,7 @@ const ApplicationForm = ({
           handleSave={handleSave}
           handleReject={handleReject}
           noButtons={noButtons}
+          t={t}
         />
       </div>
     </>

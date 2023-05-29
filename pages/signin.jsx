@@ -5,11 +5,18 @@ import React, { useContext, useState } from "react";
 import NavBar from "../components/NavBar";
 import AuthContext from "../context/AuthContext";
 import styles from "../styles/Signin.module.css";
+import fr from "../locales/fr";
+import en from "../locales/en";
 
 const Signin = () => {
+  // router for language
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
 
-  const { error, loading, loginUser }= useContext(AuthContext);
-  const [email, setEmail]= useState("");
+  const { error, loading, loginUser } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
   return (
     <>
       <div className={styles.container}>
@@ -29,29 +36,26 @@ const Signin = () => {
               objectFit="contain"
             />
 
-            <span className={styles.formHeading}>
-              Login
-            </span>
+            <span className={styles.formHeading}>{t?.login?.loginText}</span>
             {/* input fields container */}
             <form onSubmit={loginUser}>
               <input
-                placeholder="Email"
+                placeholder={t?.login?.emailText}
                 name="email"
                 value={email}
                 className={`${styles.formInput} ${styles.bottomMargin}`}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                placeholder="Password"
+                placeholder={t?.login?.passwordText}
                 name="password"
                 type="password"
                 className={`${styles.formInput} ${styles.bottomMargin}`}
               />
-              
               {error && <p className={styles.error}>{error}</p>}{" "}
               {/* register button */}
               <button className={styles.registerButton}>
-                {loading ? "Loading..." : "Sign In"}
+                {loading ? t?.login?.loadingText : t?.login?.signInText}
               </button>
             </form>
           </div>

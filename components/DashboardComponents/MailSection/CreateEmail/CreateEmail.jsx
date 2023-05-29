@@ -72,7 +72,7 @@ const CreateEmail = () => {
               className={styles.createMailButton}
               onClick={() => setIsCreatingMail(true)}
             >
-              + {t.adminDashboard.emailSection.createEmailButtonText}
+              + {t?.adminDashboard?.emailSection?.createEmailButtonText}
             </button>
           </div>
         )}

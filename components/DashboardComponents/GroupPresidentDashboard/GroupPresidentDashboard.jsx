@@ -10,118 +10,131 @@ import SecretaryContactInfo from "./SecretaryContactInfo/SecretaryContactInfo";
 import ViewApplicationModal from "../Modals/ViewApplicationModal/ViewApplicationModal";
 import NotFoundApplicationModal from "../Modals/NotFoundApplicationModal/NotFoundApplicationModal";
 import AuthContext from "../../../context/AuthContext";
-import axios from 'axios';
-
+import axios from "axios";
+import { useRouter } from "next/router";
+import fr from "../../../locales/fr";
+import en from "../../../locales/en";
 
 // Group President Dashboard component
 const GroupPresidentDashboard = () => {
+  // router for language selection
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
+
   // state to open previous application modal
   const [openPreviousApplicationModal, setOpenPreviousApplicationModal] =
     useState(false);
 
-
   // state to open secretary details modal
   const [openSecretaryModal, setOpenSecretaryModal] = useState(false);
 
-  const [application, setApplication] = useState(null)
-  const [prevApplication, setPrevApplication]= useState(null);
-  const { user, token, getToken } = useContext(AuthContext)
-  const [ group, setGroup ]= useState(user?.group)
-  const [ secretary, setSecretary]= useState(null);
-  const [selectedYear, setSelectedYear]= useState((new Date().getFullYear()-1).toString())
-  const [applicationFetched, setApplicationFetched]= useState()
+  const [application, setApplication] = useState(null);
+  const [prevApplication, setPrevApplication] = useState(null);
+  const { user, token, getToken } = useContext(AuthContext);
+  const [group, setGroup] = useState(user?.group);
+  const [secretary, setSecretary] = useState(null);
+  const [selectedYear, setSelectedYear] = useState(
+    (new Date().getFullYear() - 1).toString()
+  );
+  const [applicationFetched, setApplicationFetched] = useState();
 
   async function fetchSecretaryInfo() {
     try {
-      const response = await axios.get('/api/secretary');
-      setSecretary(response.data)
+      const response = await axios.get("/api/secretary");
+      setSecretary(response.data);
     } catch (error) {
-      console.error(error); 
+      console.error(error);
     }
   }
-  
+
   useEffect(function () {
     var options = {
-      method: 'GET',
-      url: '/api/application/get',
+      method: "GET",
+      url: "/api/application/get",
       params: { groupId: user.group._id, year: new Date().getFullYear() },
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + getToken()
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getToken(),
       },
     };
 
-    axios.request(options).then(function (response) {
-      setApplicationFetched(true)
-      setApplication(response.data)
-    }).catch(function (error) {
-      console.error(error);
-
-    });
-
+    axios
+      .request(options)
+      .then(function (response) {
+        setApplicationFetched(true);
+        setApplication(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
 
     var options = {
-      method: 'GET',
-      url: '/api/group',
+      method: "GET",
+      url: "/api/group",
       params: { id: user.group._id },
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + getToken()
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getToken(),
       },
     };
 
-    axios.request(options).then(function (response) {
-      setGroup(response.data)
-    }).catch(function (error) {
-      console.error(error);
-    });
+    axios
+      .request(options)
+      .then(function (response) {
+        setGroup(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
 
     fetchSecretaryInfo();
-
-  }, [])
-
+  }, []);
 
   async function fetchApplication(groupId, year) {
     var options = {
-      method: 'GET',
-      url: '/api/application/get',
-      params:  { groupId, year },
+      method: "GET",
+      url: "/api/application/get",
+      params: { groupId, year },
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + getToken()
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getToken(),
       },
     };
 
-    return axios.request(options).then(function (response) {
-      return response.data
-    }).catch(function (error) {
-      console.error(error);
-      return error;
-    });
+    return axios
+      .request(options)
+      .then(function (response) {
+        return response.data;
+      })
+      .catch(function (error) {
+        console.error(error);
+        return error;
+      });
   }
 
   function convertObject(inputObject) {
     if (!inputObject.group.mainContact)
-      inputObject.group.mainContact = "groupPresident"
-    const groupContact = inputObject
-      .group
-      .members
-      .find(m => m.role == inputObject.group.mainContact)
+      inputObject.group.mainContact = "groupPresident";
+    const groupContact = inputObject.group.members.find(
+      (m) => m.role == inputObject.group.mainContact
+    );
 
     const outputObject = {
       id: inputObject._id,
       name: `${groupContact.firstName} ${groupContact.lastName}`,
       email: groupContact.email,
-      acceptDate: new Date(inputObject.acceptDate).toLocaleDateString('en-US', { 
-                    day: 'numeric', 
-                    month: 'short', 
-                    year: 'numeric' 
-                  }),
-      rejectDate: new Date(inputObject.rejectDate).toLocaleDateString('en-US', { 
-                    day: 'numeric', 
-                    month: 'short', 
-                    year: 'numeric' 
-                  }),
+      acceptDate: new Date(inputObject.acceptDate).toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }),
+      rejectDate: new Date(inputObject.rejectDate).toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }),
       applicationDate: inputObject.year.toString(),
       status: inputObject.status.toLowerCase(),
       orgName: inputObject.group.name,
@@ -137,12 +150,16 @@ const GroupPresidentDashboard = () => {
       noOfSUV: inputObject.suvs.toString(),
       bringingTruck: inputObject.pickups.quantity > 0,
       noOfTrucks: inputObject.pickups.quantity.toString(),
-      brandOfTruck: inputObject.pickups.brands.map(brand => brand.name).join(", "),
+      brandOfTruck: inputObject.pickups.brands
+        .map((brand) => brand.name)
+        .join(", "),
       trailersAttached: inputObject.trailer?.length > 0,
       trailerLength: `${inputObject.trailer?.length}ft`,
       bringingFloats: inputObject.float?.length > 0,
       floatsLength: `${inputObject.float?.length}ft`,
-      isThereFireExtinguisher: inputObject.float?.fireExtinguisher ? "Yes" : "No",
+      isThereFireExtinguisher: inputObject.float?.fireExtinguisher
+        ? "Yes"
+        : "No",
       bringingHorses: inputObject.animals.horses > 0,
       areHorsesInsured: inputObject.horseCertificateOfInsurance,
       noOfHorses: inputObject.animals.horses.toString(),
@@ -151,68 +168,79 @@ const GroupPresidentDashboard = () => {
       anyOtherAnimal: inputObject.animals.others !== "",
       anyOtherAnimalNoAndDescription: inputObject.animals.others,
     };
-    outputObject.bringingAnimals =  outputObject.bringingHorses ||
-                                    outputObject.bringingDogs ||
-                                    outputObject.anyOtherAnimal;
+    outputObject.bringingAnimals =
+      outputObject.bringingHorses ||
+      outputObject.bringingDogs ||
+      outputObject.anyOtherAnimal;
     return outputObject;
   }
 
-  function handlePreviousApplicationView(){
-    fetchApplication(user.group._id, selectedYear).then(function(previousApplication){
-      if(!previousApplication){ 
+  function handlePreviousApplicationView() {
+    fetchApplication(user.group._id, selectedYear).then(function (
+      previousApplication
+    ) {
+      if (!previousApplication) {
         setOpenPreviousApplicationModal(true);
-        setPrevApplication(null)
+        setPrevApplication(null);
         return;
       }
-      setPrevApplication(convertObject(previousApplication))
-      setOpenPreviousApplicationModal(true)
-    })
+      setPrevApplication(convertObject(previousApplication));
+      setOpenPreviousApplicationModal(true);
+    });
   }
 
   function areApplicationsOpen() {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    
+
     const startApplicationDate = new Date(currentYear, 2, 17); // Months are 0-indexed, so 2 is March
     const endApplicationDate = new Date(currentYear, 5, 1); // Months are 0-indexed, so 5 is June
-  
-    return currentDate >= startApplicationDate && currentDate < endApplicationDate;
+
+    return (
+      currentDate >= startApplicationDate && currentDate < endApplicationDate
+    );
   }
   return (
     <>
       <div className={styles.container}>
         {/* Join Parade button component */}
-        {
-          user.role==group.mainContact && 
+        {user.role == group.mainContact &&
           applicationFetched &&
-          areApplicationsOpen() && 
-          (!application || application?.status.toUpperCase()=="REJECTED") &&(
-            <JoinParadeButton />        
-          )
-        }
-        {
-          !areApplicationsOpen() && (
-            <p style={{fontSize: "1.5rem", fontWeight: "600"}}
-            >Application are closed</p>
-          )
-        }
+          areApplicationsOpen() &&
+          (!application || application?.status.toUpperCase() == "REJECTED") && (
+            <JoinParadeButton />
+          )}
+        {!areApplicationsOpen() && (
+          <p style={{ fontSize: "1.5rem", fontWeight: "600" }}>
+            Application are closed
+          </p>
+        )}
         <div className={styles.divider} />
         {/* PreviousApplication component */}
         <PreviousApplications
           selectedYear={selectedYear}
           setSelectedYear={setSelectedYear}
           handleClick={handlePreviousApplicationView}
+          t={t}
         />
         <div className={styles.divider} />
         {/* secretary info component */}
-        <SecretaryContactInfo handleClick={() => setOpenSecretaryModal(true)} />
+        <SecretaryContactInfo
+          handleClick={() => setOpenSecretaryModal(true)}
+          t={t}
+        />
         <div className={styles.divider} />
         {/* application status component */}
-        <GroupApplicationStatus status={application? application.status.toUpperCase(): "NOT APPLIED"} />
+        <GroupApplicationStatus
+          status={
+            application ? application.status.toUpperCase() : "NOT APPLIED"
+          }
+          t={t}
+        />
         <div className={styles.divider} />
         {/* footer component */}
-        {(application && application.status.toUpperCase()=="ACCEPTED") && (
-          <ParadeSection section={application.section}/>
+        {application && application.status.toUpperCase() == "ACCEPTED" && (
+          <ParadeSection section={application.section} />
         )}
       </div>
       {/* secretary details modal */}
@@ -220,30 +248,33 @@ const GroupPresidentDashboard = () => {
         <SecretaryDetailsModal
           closeModal={() => setOpenSecretaryModal(false)}
           formData={{
-            secretaryName: secretary?.firstName+" "+secretary?.lastName,
+            secretaryName: secretary?.firstName + " " + secretary?.lastName,
             secretaryEmail: secretary?.email,
             secretaryPhone: secretary?.phoneNumber,
           }}
+          t={t}
         />
       )}
       {/* previous application modal */}
       {openPreviousApplicationModal && prevApplication && (
-         <ViewApplicationModal
-            data={prevApplication}
-            closeModal={() => { 
-              setOpenPreviousApplicationModal(false); 
-              setApplication(null)
-            }}
-            setAllData={()=>{}}
-            openAcceptModal={() => {}}
-            noButtons={true}
-          />
+        <ViewApplicationModal
+          data={prevApplication}
+          closeModal={() => {
+            setOpenPreviousApplicationModal(false);
+            setApplication(null);
+          }}
+          setAllData={() => {}}
+          openAcceptModal={() => {}}
+          noButtons={true}
+        />
       )}
 
-     {openPreviousApplicationModal && !prevApplication &&(
-      <NotFoundApplicationModal closeModal={()=> setOpenPreviousApplicationModal(false)}/>
-     )}
-
+      {openPreviousApplicationModal && !prevApplication && (
+        <NotFoundApplicationModal
+          closeModal={() => setOpenPreviousApplicationModal(false)}
+          t={t}
+        />
+      )}
     </>
   );
 };

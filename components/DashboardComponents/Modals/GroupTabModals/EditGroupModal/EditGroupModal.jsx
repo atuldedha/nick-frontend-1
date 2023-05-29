@@ -5,10 +5,18 @@ import styles from "../../../../../styles/EditGroupModal.module.css";
 import EditInput from "../../VolunteerTabModals/EditVolunteerModal/EditInput/EditInput";
 import ContactInfo from "./ContactInfo/ContactInfo";
 import CountryRep from "./CountryRep/CountryRep";
+import { useRouter } from "next/router";
+import fr from "../../../../../locales/fr";
+import en from "../../../../../locales/en";
 
 // Edit Group Modal Component
 const EditGroupModal = ({ data, closeModal, setData, setSuccess }) => {
   data = JSON.parse(JSON.stringify(data));
+  // router for language selection
+  const router = useRouter();
+  const { locale } = router;
+  // language variable
+  const t = locale === "fr" ? fr : en;
   // primary contact state
   const [mainContact, setMainContact] = useState(data.mainContact);
   // data state
@@ -74,10 +82,12 @@ const EditGroupModal = ({ data, closeModal, setData, setSuccess }) => {
         <div className={styles.flexRow}>
           <div className={styles.flexCol}>
             <div className={`${styles.flexCol} ${styles.marginLeftLarge}`}>
-              <span className={styles.headerText}>Edit Group</span>
+              <span className={styles.headerText}>
+                {t?.editGroupModal?.headerText}
+              </span>
 
               <span className={styles.modalText}>
-                Please select primary contact
+                {t?.editGroupModal?.selectContactText}
               </span>
               {/* checkboxes to select primary comtact */}
               <div className={styles.contactOptionContainer}>
@@ -93,7 +103,7 @@ const EditGroupModal = ({ data, closeModal, setData, setSuccess }) => {
                 </div>
 
                 <span className={`${styles.modalText} ${styles.marginRight}`}>
-                  Contact 1
+                  {t?.editGroupModal?.contact1Text}
                 </span>
 
                 <div
@@ -107,7 +117,9 @@ const EditGroupModal = ({ data, closeModal, setData, setSuccess }) => {
                   <div className={styles.innerCircle} />
                 </div>
 
-                <span className={styles.modalText}>Contact 2</span>
+                <span className={styles.modalText}>
+                  {t?.editGroupModal?.contact2Text}
+                </span>
               </div>
             </div>
             <input
@@ -122,7 +134,9 @@ const EditGroupModal = ({ data, closeModal, setData, setSuccess }) => {
                 className={styles.changeText}
                 onClick={() => setGroupNameEditable(!groupNameEditable)}
               >
-                {groupNameEditable ? "cancel" : "change"}
+                {groupNameEditable
+                  ? t?.editGroupModal?.cancelText
+                  : t?.editGroupModal?.changeText}
               </span>
               <div className={styles.inputCont}>
                 {/* custom input component */}
@@ -141,23 +155,25 @@ const EditGroupModal = ({ data, closeModal, setData, setSuccess }) => {
         <div className={styles.divider} />
         {/* custom component to show contact info */}
         <ContactInfo
-          title="Contact 1"
+          title={t?.editGroupModal?.contact1Text}
           name="groupPresident"
           handleButtonClick={handleButtonClick}
           handleChange={handleChange}
           newData={newData}
           setSuccess={setSuccess ? setSuccess : () => {}}
+          t={t}
         />
 
         <div className={styles.divider} />
         {/* custom component to show contact info */}
         <ContactInfo
-          title="Contact 2"
+          title={t?.editGroupModal?.contact2Text}
           name="groupVicePresident"
           handleButtonClick={handleButtonClick}
           handleChange={handleChange}
           newData={newData}
           setSuccess={setSuccess ? setSuccess : () => {}}
+          t={t}
         />
 
         <div style={{ color: "red", fontSize: "1.5rem" }}>{error}</div>
@@ -171,7 +187,9 @@ const EditGroupModal = ({ data, closeModal, setData, setSuccess }) => {
             <CountryRep newData={newData} setNewData={setNewData} />
 
             <button className={`${styles.addButton}`}>
-              {loading ? "Saving..." : "Save"}
+              {loading
+                ? t?.editGroupModal?.savingText
+                : t?.editGroupModal?.saveText}
             </button>
           </div>
 

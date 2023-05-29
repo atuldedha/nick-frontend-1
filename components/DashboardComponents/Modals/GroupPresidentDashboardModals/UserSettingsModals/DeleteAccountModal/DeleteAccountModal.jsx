@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ApplicationInput from "../../../ViewApplicationModal/ApplicationForm/ApplicationInput/ApplicationInput";
 import styles from "../../../../../../styles/DeleteAccountModal.module.css";
-const DeleteAccountModal = ({ closeModal, formData }) => {
+const DeleteAccountModal = ({ closeModal, formData, t }) => {
   return (
     <div className={styles.container}>
       <div className={styles.modalContainer}>
@@ -17,7 +17,7 @@ const DeleteAccountModal = ({ closeModal, formData }) => {
           />
         </div>
         <span className={styles.headerText}>
-          In order to delete your account please contact your secreatary
+          {t?.deleteVolunteerModal?.text}
         </span>
         <div className={styles.formContainer} style={{ paddingBottom: "5rem" }}>
           <div className={styles.inputContainer}>

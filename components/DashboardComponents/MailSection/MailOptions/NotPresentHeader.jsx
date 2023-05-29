@@ -6,23 +6,23 @@ import CheckIcon from "../../../../public/checkRed.png";
 import { useMail } from "../../../../context/MailContext";
 
 // header to show when sending "to someone not on any current list" option is selected
-const NotPresentHeader = ({ openDeleteModal, list, setList }) => {
+const NotPresentHeader = ({ openDeleteModal, list, setList, t }) => {
   // state to check and uncheck all cards inside "to someone not on any current list" option
   const { allMailsCheck, setAllMailsCheck } = useMail(false);
-  function checkAll(){
-    setList(list.map(item=>{ return {...item, checked: allMailsCheck}}))
+  function checkAll() {
+    setList(
+      list.map((item) => {
+        return { ...item, checked: allMailsCheck };
+      })
+    );
     setAllMailsCheck(!allMailsCheck);
-  
   }
-  
+
   return (
     <>
-      <div className={`${styles.bigCheckboxContainer} ${styles.smallWidth}`}>
+      <div className={`${styles.bigCheckboxContainer} ${styles.widthLimit}`}>
         {/* big checkbox */}
-        <div
-          className={styles.bigCheckbox}
-          onClick={checkAll}
-        >
+        <div className={styles.bigCheckbox} onClick={checkAll}>
           {allMailsCheck && (
             <Image
               src={CheckIcon}
@@ -35,9 +35,13 @@ const NotPresentHeader = ({ openDeleteModal, list, setList }) => {
         </div>
       </div>
       {/* title */}
-      <span className={`${styles.title} ${styles.person}`}>Title</span>
+      <span className={`${styles.title} ${styles.person}`}>
+        {t?.adminDashboard?.tableHeader?.titleHeaderText}
+      </span>
       {/* status */}
-      <span className={`${styles.status} ${styles.smallStatus}`}>Status</span>
+      <span className={`${styles.status} ${styles.smallStatus}`}>
+        {t?.adminDashboard?.tableHeader?.statusHeaderText}
+      </span>
       {/* delete icon to delete selected mail */}
       <div className={styles.alignEnd}>
         <Image

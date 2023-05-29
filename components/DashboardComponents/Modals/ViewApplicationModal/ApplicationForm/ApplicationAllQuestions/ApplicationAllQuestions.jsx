@@ -15,12 +15,13 @@ const ApplicationAllQuestions = ({
   handleSave,
   handleReject,
   noButtons,
+  t,
 }) => {
   return (
     <div className={styles.flexColumn}>
       {/* custom question component */}
       <ApplicationQuestion
-        question="1- Will your group have walkers"
+        question={`1- ${t?.readApplicationModal?.question1}`}
         yesChecked={formData.haveWalkers}
         isEditable={isEditable}
         setYesChecked={() => setFormData({ ...formData, haveWalkers: true })}
@@ -30,7 +31,7 @@ const ApplicationAllQuestions = ({
 
       {formData.haveWalkers && (
         <span className={`${styles.formText} ${styles.marginBottom}`}>
-          1a- How many people will be walking in your group?
+          1a- {t?.readApplicationModal?.question1A}
           {/* custom answer component */}
           <ApplicationAnswer
             isEditable={isEditable}
@@ -42,7 +43,7 @@ const ApplicationAllQuestions = ({
       )}
       {/* custom question component */}
       <ApplicationQuestion
-        question="2- Are you going to bring any cars?"
+        question={`2- ${t?.readApplicationModal?.question2}`}
         yesChecked={formData.bringingCar}
         isEditable={isEditable}
         setYesChecked={() => setFormData({ ...formData, bringingCar: true })}
@@ -52,8 +53,7 @@ const ApplicationAllQuestions = ({
 
       {formData.bringingCar && (
         <span className={`${styles.formText} ${styles.marginBottom}`}>
-          2a- How many cars (All cars must be decorated and any undecorated car
-          will be remoe from parade)?
+          2a- {t?.readApplicationModal?.question2A}?
           {/* custom answer component */}
           <ApplicationAnswer
             isEditable={isEditable}
@@ -65,7 +65,7 @@ const ApplicationAllQuestions = ({
       )}
       {/* custom question component */}
       <ApplicationQuestion
-        question="3- Are you going to bring any SUVs?"
+        question={`3- ${t?.readApplicationModal?.question3}`}
         yesChecked={formData.bringingSUV}
         isEditable={isEditable}
         setYesChecked={() => setFormData({ ...formData, bringingSUV: true })}
@@ -75,7 +75,7 @@ const ApplicationAllQuestions = ({
 
       {formData.bringingSUV && (
         <span className={`${styles.formText} ${styles.marginBottom}`}>
-          3a- How many SUVs
+          3a- {t?.readApplicationModal?.question3A}
           {/* custom answer component */}
           <ApplicationAnswer
             isEditable={isEditable}
@@ -87,7 +87,7 @@ const ApplicationAllQuestions = ({
       )}
       {/* custom question component */}
       <ApplicationQuestion
-        question="4- Are you going to bring any Pick-Up Trucks?"
+        question={`4- ${t?.readApplicationModal?.question4}`}
         yesChecked={formData.bringingTruck}
         isEditable={isEditable}
         setYesChecked={() => setFormData({ ...formData, bringingTruck: true })}
@@ -98,7 +98,7 @@ const ApplicationAllQuestions = ({
       {formData.bringingTruck && (
         <>
           <span className={`${styles.formText} ${styles.marginBottom}`}>
-            4a- How many?
+            4a- {t?.readApplicationModal?.question4A}
             {/* custom answer component */}
             <ApplicationAnswer
               isEditable={isEditable}
@@ -109,7 +109,7 @@ const ApplicationAllQuestions = ({
           </span>
 
           <span className={`${styles.formText} ${styles.marginBottom}`}>
-            4b- What brand / type?
+            4b- {t?.readApplicationModal?.question4B}
             {/* custom answer component */}
             <ApplicationAnswer
               isEditable={isEditable}
@@ -122,7 +122,7 @@ const ApplicationAllQuestions = ({
       )}
       {/* custom question component */}
       <ApplicationQuestion
-        question="5- Are you going to bring any trailers attached to your SUV, Car or Pickup Truck?"
+        question={`5- ${t?.readApplicationModal?.question5}`}
         yesChecked={formData.trailersAttached}
         isEditable={isEditable}
         setYesChecked={() =>
@@ -136,9 +136,7 @@ const ApplicationAllQuestions = ({
 
       {formData.trailersAttached && (
         <span className={`${styles.formText} ${styles.marginBottom}`}>
-          5a- How long is the total length from the front of the car to the end
-          of the trailer in feet(Round up to the nearest foot, Please note we
-          have a maximum limit of 28 ft in length)?
+          5a- {t?.readApplicationModal?.question5A}
           {/* custom answer component */}
           <ApplicationAnswer
             isEditable={isEditable}
@@ -150,7 +148,7 @@ const ApplicationAllQuestions = ({
       )}
       {/* custom question component */}
       <ApplicationQuestion
-        question="6- Are you bringing any floats?"
+        question={`6- ${t?.readApplicationModal?.question6}`}
         yesChecked={formData.bringingFloats}
         isEditable={isEditable}
         setYesChecked={() => setFormData({ ...formData, bringingFloats: true })}
@@ -161,8 +159,7 @@ const ApplicationAllQuestions = ({
       {formData.bringingFloats && (
         <>
           <span className={`${styles.formText} ${styles.marginBottom}`}>
-            6a- What is the length of the float in feet (maximum limit of 28 ft
-            in length)?
+            6a- {t?.readApplicationModal?.question6A}
             {/* custom answer component */}
             <ApplicationAnswer
               isEditable={isEditable}
@@ -173,7 +170,7 @@ const ApplicationAllQuestions = ({
           </span>
 
           <span className={`${styles.formText} ${styles.marginBottom}`}>
-            6b- Do you have a fire extinguisher on the float (mandatory)?
+            6b- {t?.readApplicationModal?.question6B}
             {/* custom answer component */}
             <ApplicationAnswer
               isEditable={isEditable}
@@ -186,7 +183,7 @@ const ApplicationAllQuestions = ({
       )}
       {/* custom question component */}
       <ApplicationQuestion
-        question="7- Are you bringing any animals?"
+        question={`7- ${t?.readApplicationModal?.question7}`}
         yesChecked={formData.bringingAnimals}
         isEditable={isEditable}
         setYesChecked={() =>
@@ -202,7 +199,7 @@ const ApplicationAllQuestions = ({
         <>
           <div className={styles.flexColumn}>
             <span className={`${styles.formText} ${styles.marginBottom}`}>
-              7a- Will you be bringing horses?
+              7a- {t?.readApplicationModal?.question7A}
             </span>
             {/* custom checkbox component */}
             <ApplicationCheckboxes
@@ -221,8 +218,7 @@ const ApplicationAllQuestions = ({
             <>
               <div className={styles.flexColumn}>
                 <span className={`${styles.formText}`}>
-                  7a-1- You will need to provide the parade with a certificate
-                  of insurance papers Are they insured?
+                  7a-1- {t?.readApplicationModal?.question7A1}
                 </span>
                 {/* custom checkbox component */}
                 <ApplicationCheckboxes
@@ -238,7 +234,7 @@ const ApplicationAllQuestions = ({
                 />
               </div>
               <span className={`${styles.formText} ${styles.marginBottom}`}>
-                7a-2- How many you will be bringing?
+                7a-2- {t?.readApplicationModal?.question7A2}
                 {/* custom answer component */}
                 <ApplicationAnswer
                   isEditable={isEditable}
@@ -251,7 +247,7 @@ const ApplicationAllQuestions = ({
           )}
           <div className={styles.flexColumn}>
             <span className={`${styles.formText} ${styles.marginBottom}`}>
-              7b- Will you be bringing any dogs?
+              7b- {t?.readApplicationModal?.question7B}
             </span>
             {/* custom checkbox component */}
             <ApplicationCheckboxes
@@ -268,7 +264,7 @@ const ApplicationAllQuestions = ({
           </div>
           {formData.bringingDogs && (
             <span className={`${styles.formText} ${styles.marginBottom}`}>
-              7b-1- How many dogs?
+              7b-1- {t?.readApplicationModal?.question7B1}
               {/* custom answer component */}
               <ApplicationAnswer
                 isEditable={isEditable}
@@ -280,7 +276,7 @@ const ApplicationAllQuestions = ({
           )}
           <div className={styles.flexColumn}>
             <span className={`${styles.formText} ${styles.marginBottom}`}>
-              7c- Are you bringing any other animals?
+              7c- {t?.readApplicationModal?.question7C}
             </span>
             {/* custom checkbox component */}
             <ApplicationCheckboxes
@@ -299,7 +295,7 @@ const ApplicationAllQuestions = ({
           {formData.anyOtherAnimal && (
             <div className={styles.flexColumn}>
               <span className={`${styles.formText} ${styles.marginBottom}`}>
-                7c-1- Specify number and type of each?
+                7c-1- {t?.readApplicationModal?.question7C1}
               </span>
               <textarea
                 type="text"
@@ -324,14 +320,18 @@ const ApplicationAllQuestions = ({
               className={`${styles.modalButton} ${styles.rejectButton}`}
               onClick={handleReject}
             >
-              <span>Reject</span>
+              <span>{t?.readApplicationModal?.rejectText}</span>
             </div>
             <div
               className={`${styles.modalButton} ${styles.editButton}`}
               onClick={() => setIsEditable(!isEditable)}
             >
               {/* show canel and edit based on edit state */}
-              <span>{isEditable ? "Cancel" : "Edit"}</span>
+              <span>
+                {isEditable
+                  ? t?.readApplicationModal?.cancelText
+                  : t?.readApplicationModal?.editText}
+              </span>
             </div>
           </div>
           <div
@@ -346,7 +346,11 @@ const ApplicationAllQuestions = ({
             }
           >
             {/* show Save and Accept based on edit state */}
-            <span>{isEditable ? "Save" : "Accept"}</span>
+            <span>
+              {isEditable
+                ? t?.readApplicationModal?.saveText
+                : t?.readApplicationModal?.acceptText}
+            </span>
           </div>
         </div>
       )}

@@ -11,27 +11,22 @@ import AccountWhite from "../../../public/accountWhite.png";
 
 const sidebarOptionsData = [
   {
-    text: "Email",
     image: EmailWhite,
     seletedImage: EmailBlack,
   },
   {
-    text: "Walkie Talkie System",
     image: WalkieWhite,
     seletedImage: WalkieBlack,
   },
   {
-    text: "Received Applications",
     image: ReceivedWhite,
     seletedImage: ReceivedBlack,
   },
   {
-    text: "Group List",
     image: "",
     seletedImage: "",
   },
   {
-    text: "Volunteers List",
     image: "",
     seletedImage: "",
   },
@@ -39,12 +34,10 @@ const sidebarOptionsData = [
 
 const groupPresidentOptions = [
   {
-    text: "Dashboard",
     image: DashboardWhite,
     seletedImage: DashboardBlack,
   },
   {
-    text: "UserSettings",
     image: AccountWhite,
     seletedImage: AccountBlack,
   },
